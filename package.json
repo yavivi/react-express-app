@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "export PORT=8081 && nodemon ./bin/www",
-    "client": "export PORT=8080 && cd client && npm start",
+    "client": "export PORT=$PORT && cd client && npm start",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "all": "concurrently --kill-others-on-fail \"npm start\" \"npm run client\""
   },
