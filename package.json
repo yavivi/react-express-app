@@ -5,6 +5,7 @@
   "scripts": {
     "start": "export PORT=3001 && nodemon ./bin/www",
     "client": "export PORT=3000 && cd client && npm start",
+    "heroku-postbuild": "cd ../client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "all": "concurrently --kill-others-on-fail \"npm start\" \"npm run client\""
   },
   "dependencies": {
