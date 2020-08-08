@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "export PORT=3001 && nodemon ./bin/www",
+    "start": "concurrently --kill-others-on-fail \"export PORT=3001 && nodemon ./bin/www\" \"npm run client\"",
     "heroku-postbuild": "cd ../client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "client": "export PORT=3000 && cd ../client && npm start",
     "all": "concurrently --kill-others-on-fail \"npm start\" \"npm run client\""
