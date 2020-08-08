@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "export PORT=8081 && nodemon ./bin/www",
-    "client": "export PORT=$PORT && cd client && npm start",
+    "start": "nodemon ./bin/www",
+    "client": "cd client && npm start",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "all": "concurrently --kill-others-on-fail \"npm start\" \"npm run client\""
+    "all": "concurrently --kill-others-on-fail \"npm run client\" \"npm start\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
