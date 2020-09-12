@@ -4,10 +4,9 @@ import './App.css';
 
 function App() {
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
     // Address should be replaced with FQDN of application and taken from ENV
-    fetch('http://localhost:3001/users', { 
+    fetch('http://localhost:3001/users', {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
