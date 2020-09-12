@@ -7,7 +7,8 @@ function App() {
 
   useEffect(() => {
     // Address should be replaced with FQDN of application and taken from ENV
-    fetch('http://localhost:3001/users', {
+    const domain = process.env.REACT_APP_DOMAIN;
+    fetch(`http://${domain}/users`, {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
@@ -25,12 +26,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit
+          Edit&nbsp;
           <code>src/App.jsx</code>
-          and save to reload me!
+          &nbsp;and save to reload me!
           <br />
           Running in
+          &nbsp;
           {process.env.NODE_ENV}
+          &nbsp;
           mode
         </p>
         <a
