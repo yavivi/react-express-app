@@ -1,16 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  let res;
-  fetch('http://localhost:3001/users', { 
-    headers: {
-      'Access-Control-Allow-Origin': 'localhost:3000'
-    }
-  }).then((response) => {
-    res = response;
-  }).catch((err) => console.log(err));
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    // Address should be replaced with FQDN of application and taken from ENV
+    fetch('http://localhost:3001/users', { 
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    }).then((response) => response.json()).
+      then((data) => {
+        setUsers(data);
+      }).
+      catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className="App">
@@ -25,7 +33,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React {res}
+          Users List from Server: 
+          {
+            users.map((user) => 
+              (<div key={user.id}>{user.name}</div>))
+          }
         </a>
       </header>
     </div>
