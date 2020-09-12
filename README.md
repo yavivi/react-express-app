@@ -37,7 +37,9 @@ $ cd client
 $ npm install
 ```
 
-### Run both Client and Server
+### Run both Client and Server Locally
+While developing, you can start both client and server dev server in the following way:
+
 Go back to the root directory of the project and type:
 ```
 $ cd ..
