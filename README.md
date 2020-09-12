@@ -38,14 +38,17 @@ $ npm install
 ```
 
 ### Run both Client and Server Locally
-While developing, you can start both client and server dev server in the following way:
+While developing, you can start both react and nodejs servers in the following way:
 
-Go back to the root directory of the project and type:
+First, go back to the root directory of the project:
 ```
 $ cd ..
+```
+
+Start both server and client concurrently:
+```
 $ npm run all
 ```
-This will start both server and client concurrently.
 * Client (React App) is at http://localhost:3000
 * Server (Express/NodeJS) is at http://localhost:3001
 
@@ -57,6 +60,8 @@ If you wish to start client only:
 ```
 $ npm run client
 ```
+
+Client and Server should refresh when you change you code
 
 ## Creating the Application in Heroku
 1. Create an account in Heroku Cloud (https://signup.heroku.com)
