@@ -1,22 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   const [users, setUsers] = useState([]);
+
   useEffect(() => {
     // Address should be replaced with FQDN of application and taken from ENV
     fetch('http://localhost:3001/users', {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        Accept: 'application/json'
       }
-    }).then((response) => response.json()).
-      then((data) => {
+    })
+      .then((response) => response.json())
+      .then((data) => {
         setUsers(data);
-      }).
-      catch((err) => console.log(err));
+      }).catch((err) => console.log(err));
   }, []);
 
   return (
@@ -24,7 +25,13 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload me!
+          Edit
+          <code>src/App.jsx</code>
+          and save to reload me!
+          <br />
+          Running in
+          {process.env.NODE_ENV}
+          mode
         </p>
         <a
           className="App-link"
@@ -32,15 +39,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Users List from Server: 
+          Users List from Server:
           {
-            users.map((user) => 
-              (<div key={user.id}>{user.name}</div>))
+            users.map((user) => (<div key={user.id}>{user.name}</div>))
           }
         </a>
       </header>
     </div>
   );
 }
-
 export default App;
