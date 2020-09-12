@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     // Address should be replaced with FQDN of application and taken from ENV
     const domain = process.env.REACT_APP_DOMAIN;
-    fetch(`http://${domain}/users`, {
+    fetch(`https://${domain}/users`, {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
