@@ -40,7 +40,16 @@ $ npm install
 ### Run both Client and Server Locally
 While developing, you can start both react and nodejs servers in the following way:
 
-First, go back to the root directory of the project:
+First, you need to add a local ENV file that points the client to the server domain in development.
+
+Create a file called **.env.development.local** under the client directory and add the following property:
+```
+REACT_APP_DOMAIN=localhost:3001
+```
+**NOTE:** The file must start with a dot (.)
+
+
+Then, go back to the root directory of the project:
 ```
 $ cd ..
 ```
