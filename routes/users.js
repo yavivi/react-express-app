@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   const users = [{
     "id": 1,
-    "name": "John Doe"
+    "name": "Hagay Kassa"
   },
   {
     "id": 2,
