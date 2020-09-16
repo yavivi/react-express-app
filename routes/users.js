@@ -10,11 +10,15 @@ router.get('/', function(req, res, next) {
   },
   {
     "id": 2,
-    "name": "Megi Mentesnot"
+    "name": "Simcha Balay"
   },
   {
     "id": 3,
-    "name": "yakov avraham"
+    "name": "Yakov Avraham"
+  }
+  {
+    "id": 4,
+    "name": "megi mentesnot"
   }
 ];
   res.send(users);
