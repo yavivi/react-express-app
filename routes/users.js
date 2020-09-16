@@ -20,7 +20,11 @@ router.get('/', function(req, res, next) {
     "id": 4,
     "name": "zion tamano"
   }
-  
+  ,
+  {
+    "id": 5,
+    "name": "megi mentesnot"
+  }
 ];
   res.send(users);
 });
