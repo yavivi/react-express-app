@@ -15,7 +15,12 @@ router.get('/', function(req, res, next) {
   {
     "id": 3,
     "name": "yakov avraham"
+  },
+  {
+    "id": 4,
+    "name": "zion tamano"
   }
+  
 ];
   res.send(users);
 });
