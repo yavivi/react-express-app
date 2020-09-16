@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
   },
   {
     "id": 3,
-    "name": "yakov avraham"
+    "name": "Yakov Avraham"
   }
 ];
   res.send(users);
