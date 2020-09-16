@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   },
   {
     "id": 2,
-    "name": "Jane Doe"
+    "name": "Simcha Balay"
   },
   {
     "id": 3,
