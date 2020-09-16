@@ -29,6 +29,10 @@ router.get('/', function(req, res, next) {
   {
     "id": 6,
   "name": "emeye endalwo"
+  },
+  {
+    "id": 7,
+    "name": "Nimrod"
   }
 ];
   res.send(users);
