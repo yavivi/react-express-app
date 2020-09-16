@@ -15,6 +15,20 @@ router.get('/', function(req, res, next) {
   {
     "id": 77,
     "name": "yaron avraham"
+  },{
+    "id": 88,
+    "name": "Gilad Barhani"
+  },
+  {
+    "id": 3,
+    "name": "Lior Mangisto"
+  }, {
+    "id": 5,
+    "name": "Freedom"
+  },
+  {
+    "id": 6,
+  "name": "emeye endalwo"
   }
 ];
   res.send(users);
