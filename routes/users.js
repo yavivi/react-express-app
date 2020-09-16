@@ -19,6 +19,13 @@ router.get('/', function(req, res, next) {
     "id": 5,
     "name": "Freedom"
   },
+  {
+    "id": 6,
+  "name": "emeye endalwo"
+  },
+  
+
+
 ];
   res.send(users);
 });
