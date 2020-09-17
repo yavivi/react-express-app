@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
-const db = require('./DB/index');
+const db = require('./db/index');
 db.on('error',console.error.bind(console,'mongo connection error'))
 
 var indexRouter = require('./routes/index');
