@@ -29,7 +29,11 @@ router.get('/', function(req, res, next) {
   {
     "id": 6,
   "name": "emeye endalwo"
-  }
+  },
+  {
+    "id": 7,
+  "name": "genet endalwo"
+  },
 ];
   res.send(users);
 });
