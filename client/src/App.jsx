@@ -7,7 +7,8 @@ function App() {
 
   useEffect(() => {
     // Address should be replaced with FQDN of application and taken from ENV
-    const domain = process.env.REACT_APP_DOMAIN;
+    // const domain = process.env.REACT_APP_DOMAIN;
+    const domain = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_DOMAIN : "localhost:3001";
     const http = process.env.NODE_ENV === 'production' ? 'https' : 'http';
     fetch(`${http}://${domain}/users`, {
       headers: {
