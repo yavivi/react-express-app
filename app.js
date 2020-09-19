@@ -1,5 +1,7 @@
+var sslRedirect = require('heroku-ssl-redirect');
 var createError = require('http-errors');
 var express = require('express');
+var env = process.env.NODE_ENV || 'development';
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -18,6 +20,11 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+if (env === 'production') {
+    //Redirect http to https
+    app.use(sslRedirect());
+}
+
 app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
@@ -28,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Added to serve client static files
 app.use(express.static(path.resolve(__dirname, 'client/build')));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter); 
