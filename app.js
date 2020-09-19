@@ -1,7 +1,5 @@
-var sslRedirect = require('heroku-ssl-redirect');
 var createError = require('http-errors');
 var express = require('express');
-var env = process.env.NODE_ENV || 'development';
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -20,15 +18,21 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-if (env === 'production') {
-    //Redirect http to https
-    app.use(sslRedirect());
-}
-
 app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production') {
+      if (req.headers['x-forwarded-proto'] !== 'https')
+          // the statement for performing our redirection
+          return res.redirect('https://' + req.headers.host + req.url);
+      else
+          return next();
+  } else
+      return next();
+});
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
