@@ -9,11 +9,8 @@
     "all": "concurrently --kill-others-on-fail \"npm run client\" \"npm start\""
   },
   "dependencies": {
-<<<<<<< HEAD
     "bootstrap": "^4.5.2",
-=======
     "body-parser": "^1.19.0",
->>>>>>> 0a13e19c3f4b9ee697fac9b9f388bb2f76788ab6
     "concurrently": "^5.2.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",

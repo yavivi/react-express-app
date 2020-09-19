@@ -8,6 +8,8 @@ const db=require('./db/index')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const guidesRouter = require('./routes/guide-router');
+const touristsRouter = require('./routes/tourist-router');
+
 
 const app = express();
 
@@ -29,6 +31,8 @@ app.use(express.static(path.resolve(__dirname, 'client/build')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', guidesRouter);
+app.use('/api', touristsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
