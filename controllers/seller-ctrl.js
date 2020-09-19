@@ -57,12 +57,7 @@ const updateSeller = (req, res) => {
     }
     Seller.findOne({ _id: req.params.id})
     .then(Seller => {
-        Seller.first_name = body.first_name;
-        Seller.last_name = body.last_name;
-        Seller.city = body.city;
-        Seller.email = body.email;
-        Seller.tel = body.tel;
-        Seller.password = body.password;
+        Seller = transferData(Seller, body);
         Seller.save()
         .then(() => {
             return res.status(200).json({
@@ -106,3 +101,13 @@ const getSellerbyid = (req,res)=>{
             }).catch(err =>res.status(400).json({success:false,message:'seller request',error:err.message}))
 } 
 module.exports ={ getSellers,createSeller,updateSeller,deleteSeller,getSellerbyid}
+
+function transferData(Seller, body) {
+    Seller.first_name = body.first_name;
+    Seller.last_name = body.last_name;
+    Seller.city = body.city;
+    Seller.email = body.email;
+    Seller.tel = body.tel;
+    Seller.password = body.password;
+    return Seller;
+}
