@@ -32,8 +32,13 @@ router.get('/', function(req, res, next) {
   },
   {
     "id": 7,
+<<<<<<< HEAD
   "name": "genet endalwo"
   },
+=======
+    "name": "Nimrod"
+  }
+>>>>>>> 7b86cd175544800fbbbd09903c3657b9d999020e
 ];
   res.send(users);
 });
