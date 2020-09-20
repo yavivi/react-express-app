@@ -1,7 +1,8 @@
 import axios from 'axios';
+import backendUrl from './backend-url';
 
 const api = axios.create({
-    baseURL:"http://localhost:3001/category"
+    baseURL:`${backendUrl}/category`
 })
 
 export const getAllCategories = async () => api.get('/');
