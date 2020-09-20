@@ -5,7 +5,7 @@ import { getAllCategories } from './apis/categoriesApi';
 
 
 function App() {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(null);
 
     useEffect(() => {
         getAllCategories()
@@ -18,7 +18,7 @@ function App() {
     }, []);
    
     return <div>
-        {items.length && <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" />}
+        {items && <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" />}
     </div>
 }
 
