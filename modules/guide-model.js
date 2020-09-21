@@ -5,10 +5,10 @@ const schema = mongoose.Schema;
 
 
 const tripSchema = new schema({
+
     description: { type: String, required: true },
     name: { type: String, required: true },
-
-
+    
 });
 
 
@@ -27,8 +27,9 @@ const guideSchema = new schema(
         city: { type: String, required: true },
         country: { type: String, required: true },
         phone: { type: Number, required: true },
-        email: { type: String, required: true },
+        email: { type: String, required: true,unique:true },
         password: { type: String, required: true },
+        country : { type: String, required: true },
         role: { type: Number, required: true },
         Language: [{ type: String, required: true }],
         trips: [tripSchema],

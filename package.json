@@ -9,8 +9,9 @@
     "all": "concurrently --kill-others-on-fail \"npm run client\" \"npm start\""
   },
   "dependencies": {
-    "bootstrap": "^4.5.2",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.2",
     "concurrently": "^5.2.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
@@ -20,6 +21,7 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "mongoose": "^5.10.5",
+    "mongoose-encryption": "^2.0.2",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.4",
     "react-bootstrap": "^1.3.0",

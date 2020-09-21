@@ -13,5 +13,7 @@ router.delete('/tourist/:id', touristCtrl.deleteTourist1);
 
 router.put('/tourist/:id', touristCtrl.updateTourist);
 
+
+
 module.exports = router;
 

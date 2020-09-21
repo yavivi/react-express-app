@@ -79,6 +79,7 @@ const getGuideById = async (req, res) => {
         return res.status(200).json({ success: true, data: guide })
     }).catch(err => console.log(err))
 }
+
 const updateGiude = (req, res) => {
     const body = req.body
 
