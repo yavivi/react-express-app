@@ -32,9 +32,9 @@ const createGuide = (req, res) => {
             return res.status(400).json({
                 error,
                 message: 'Guide not created!'
-               
+
             })
-            
+
         })
 }
 
@@ -150,5 +150,5 @@ module.exports = {
     createGuide,
     deleteGuide1,
     updateGiude
-    
+
 }

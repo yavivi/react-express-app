@@ -1,69 +1,80 @@
-const guide = require('../modules/guide-model');
+const guide = require("../modules/guide-model");
 
+const search = (req, res) => {
+  const query = {};
+  if (req.query.country) {
+    query.country = req.query.country;
+  }
+  if (req.query.language) {
+      //todo fix query language array
+    query.Language = req.query.language;
+  }
 
-
-const findByCountry=(req,res)=>{
-    guide.find({country:req.body.country})
-    .then(guides => {
-        if (!guides.length) {
-            return res.status(404).json({ success: false, error: 'not  found a single guide in thes country' })
-        }
-        else {
-            return res.status(200).json({ success: true, data: guides });
-        }
-    })
-    .catch(error => {
-        console.log(error);
-        return res.status(400).json({
+  guide
+    .find(query)
+    .then((guides) => {
+      if (!guides.length) {
+        return res
+          .status(404)
+          .json({
             success: false,
-            error: error,
-            message: 'Could not get country!'
-        })
+            error: "not  found a single guide in thes country",
+          });
+      }
+      return res.status(200).json({ success: true, data: guides });
     })
-}
+    .catch((error) => {
+      console.log(error);
+      return res.status(400).json({
+        success: false,
+        error: error,
+        message: "Could not get country!",
+      });
+    });
+};
 
-const findByLanguage=(req,res)=>{
-    guide.find({Language:req.body.Language})
-    .then(guides => {
-        if (!guides.length) {
-            return res.status(404).json({ success: false, error: 'not  found a single guide how speak Language' })
-        }
-        else {
-            return res.status(200).json({ success: true, data: guides });
-        }
-    })
-    .catch(error => {
-        console.log(error);
-        return res.status(400).json({
-            success: false,
-            error: error,
-            message: 'Could not get Language!'
-        })
-    })
-}
-const findByCountryAndLanguage=(req,res)=>{
-    guide.find({Language:req.body.Language},{country:req.body.country})
-    .then(guides => {
-        if (!guides.length) {
-            return res.status(404).json({ success: false, error: 'not  found a single guide ' })
-        }
-        else {
-            return res.status(200).json({ success: true, data: guides });
-        }
-    })
-    .catch(error => {
-        console.log(error);
-        return res.status(400).json({
-            success: false,
-            error: error,
-            
-        })
-    })
-}
+// const findByLanguage = (req, res) => {
+//     guide.find({ Language: req.query.Language })
+//         .then(guides => {
+//             if (!guides.length) {
+//                 return res.status(404).json({ success: false, error: 'not  found a single guide how speak Language' })
+//             }
+//             else {
+//                 return res.status(200).json({ success: true, data: guides });
+//             }
+//         })
+//         .catch(error => {
+//             console.log(error);
+//             return res.status(400).json({
+//                 success: false,
+//                 error: error,
+//                 message: 'Could not get Language!'
+//             })
+//         })
+// }
+// const findByCountryAndLanguage = (req, res) => {
+//     guide.find({ Language: req.params.Language }, { country: req.params.country })
+//         .then(guides => {
+//             if (!guides.length) {
+//                 return res.status(404).json({ success: false, error: 'not  found a single guide ' })
+//             }
+//             else {
+//                 return res.status(200).json({ success: true, data: guides });
+//             }
+//         })
+//         .catch(error => {
+//             console.log(error);
+//             return res.status(400).json({
+//                 success: false,
+//                 error: error,
+
+//             })
+//         })
+// }
 
 module.exports = {
-    findByCountry,
-    findByLanguage,
-    findByCountryAndLanguage
-    
-}
+  // findByCountry,
+  // findByLanguage,
+  // findByCountryAndLanguage
+  search,
+};

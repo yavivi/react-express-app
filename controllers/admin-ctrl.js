@@ -33,12 +33,12 @@ const createAdmin = (req, res) => {
             return res.status(400).json({
                 error,
                 message: 'Admin not created!'
-               
+
             })
-            
+
         })
 }
- 
+
 const deleteAdmin = async (req, res) => {
     await admin.findOneAndDelete({ _id: req.params.id }, (err, admin1) => {
         if (err) {
@@ -52,7 +52,7 @@ const deleteAdmin = async (req, res) => {
 }
 
 
-const getAdmins= (req, res) => {
+const getAdmins = (req, res) => {
     admin.find()
         .then(admins => {
             if (!admins.length) {

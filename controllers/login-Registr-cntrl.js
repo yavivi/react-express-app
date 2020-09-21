@@ -1,10 +1,8 @@
-const TouristtModel = require('../modules/tourist-model');
-const bcrypt = require('bcrypt');
-const { json } = require('body-parser');
+const TouristtModel = require("../modules/tourist-model");
+const bcrypt = require("bcrypt");
+const { json } = require("body-parser");
 
-
-const login =  (req, res) => {
-    
+const login = (req, res) => {
     //  TouristtModel.findOne({ email: req.body.email })
     // .then(tourist=>{
     //     if(tourist<1){
@@ -34,54 +32,46 @@ const login =  (req, res) => {
     //         error:err
     //     })
     // })
-     
+};
 
-
-}
-
-    
-const registeruser= (req,res) =>{
-    bcrypt.hash(req.body.password,10,(err,hash)=>{
-        if(err){
+const registeruser = (req, res) => {
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
+        if (err) {
             res.status(500).json({
-                error:err
+                error: err,
             });
-        }
-        else{
-            const tourist=TouristtModel({
-                first_name:req.body.first_name,
-                last_name:req.body.last_name,
-                email:req.body.email,
-                password:hash,
-                role:req.body.role,
-              
-                comments_History:{
-                    text:req.body.text,
-                    date:req.body.date,
-                    tourGuideID:req.body.id,
-                } 
+        } else {
+            const tourist = TouristtModel({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                password: hash,
+                role: req.body.role,
+
+                comments_History: {
+                    text: req.body.text,
+                    date: req.body.date,
+                    tourGuideID: req.body.id,
+                },
             });
             tourist
-            .save()
-            .then(result=>{
-                console.log(result)
-                res.status(201).json({
-                    message:'user created'
+                .save()
+                .then((result) => {
+                    console.log(result);
+                    res.status(201).json({
+                        message: "user created",
+                    });
                 })
-            })
-            .catch(err =>{
-                res.status(500).json({
-                    error:err
-                })
-            })
-
+                .catch((err) => {
+                    res.status(500).json({
+                        error: err,
+                    });
+                });
         }
-
-    })
-}
+    });
+};
 
 module.exports = {
     login,
     registeruser,
-  
-}
+};
