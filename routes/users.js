@@ -11,7 +11,30 @@ router.get('/', function(req, res, next) {
   {
     "id": 2,
     "name": "Jane Doe"
-  }];
+  },
+  {
+    "id": 77,
+    "name": "yaron avraham"
+  },{
+    "id": 88,
+    "name": "Gilad Barhani"
+  },
+  {
+    "id": 3,
+    "name": "Lior Mangisto"
+  }, {
+    "id": 5,
+    "name": "Freedom"
+  },
+  {
+    "id": 6,
+  "name": "emeye endalwo"
+  },
+  {
+    "id": 7,
+  "name": "genet endalwo"
+  },
+];
   res.send(users);
 });
 
