@@ -8,11 +8,11 @@ function App() {
         <Router>
             <Switch>
                 <Route path="/" exact component={Homepage} />
-                <Route path="/seller/login" exact component={LoginPage} />
-                <Route path="/seller/signup" exact component={SignupPage} />
-                <Route path="/seller/dashboard" exact component={SellerDashboard} />
-                <Route path="/seller/publish-ticket" exact component={PublishTicket} />
-                <Route path="/seller/ticket/:id/management" exact component={TicketManagement} />
+                <Route path="/sellers/login" exact component={LoginPage} />
+                <Route path="/sellers/signup" exact component={SignupPage} />
+                <Route path="/sellers/dashboard" exact component={SellerDashboard} />
+                <Route path="/sellers/publish-ticket" exact component={PublishTicket} />
+                <Route path="/sellers/ticket/:id/management" exact component={TicketManagement} />
             </Switch>
         </Router>
     </div>
