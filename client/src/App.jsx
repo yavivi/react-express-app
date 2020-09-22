@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Menu from './components/Menu';
 import './App.css';
 import { getAllCategories } from './apis/categoriesApi';
+import Dropdown from "./components/drop";
+import SellTickets from "./components/SellTickets";
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
    
     return <div>
         {items.length && <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" />}
+        <Dropdown/>
+        <SellTickets/>
     </div>
 }
 
