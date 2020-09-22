@@ -49,7 +49,7 @@ app.use('/users', usersRouter);
 app.use('/category', categoriesRouter);  
 app.use('/seller', sellersRouter);
 app.use('/ticket', ticketsRouter);
-app.use('/', indexRouter);
+app.use('/*', indexRouter);
 
 
 // catch 404 and forward to error handler
