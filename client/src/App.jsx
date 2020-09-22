@@ -1,28 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import Menu from './components/Menu';
+import React from 'react';
 import './App.css';
-import { getAllCategories } from './apis/categoriesApi';
-import Dropdown from "./components/drop";
-import SellTickets from "./components/SellTickets";
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Homepage, LoginPage, PublishTicket, SellerDashboard, TicketManagement, SignupPage } from './pages';
 
 function App() {
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        getAllCategories()
-        .then(res => {
-            let items = res.data.data;
-            items.unshift({_id:1, name:'All'});
-            setItems(items);
-        })
-        .catch(error => console.log(error));
-    }, []);
-   
     return <div>
-        {items.length && <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" />}
-        <Dropdown/>
-        <SellTickets/>
+        <Router>
+            <Switch>
+                <Route path="/" exact component={Homepage} />
+                <Route path="/sellers/login" exact component={LoginPage} />
+                <Route path="/sellers/signup" exact component={SignupPage} />
+                <Route path="/sellers/dashboard" exact component={SellerDashboard} />
+                <Route path="/sellers/publish-ticket" exact component={PublishTicket} />
+                <Route path="/sellers/ticket/:id/management" exact component={TicketManagement} />
+            </Switch>
+        </Router>
     </div>
 }
 
