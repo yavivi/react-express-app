@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Menu from './components/Menu';
 import './App.css';
 import { getAllCategories } from './apis/categoriesApi';
+import TicketsContainer from './components/TicketsContainer'
 
 function App() {
     const [items, setItems] = useState([]);
@@ -18,6 +19,7 @@ function App() {
    
     return <div>
         <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" />
+        <TicketsContainer />
     </div>
 }
 
