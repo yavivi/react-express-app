@@ -3,9 +3,8 @@ import Menu from './components/Menu';
 import './App.css';
 import { getAllCategories } from './apis/categoriesApi';
 
-
 function App() {
-    const [items, setItems] = useState(null);
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
         getAllCategories()
@@ -18,7 +17,7 @@ function App() {
     }, []);
    
     return <div>
-        {items && <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" />}
+        <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" />
     </div>
 }
 
