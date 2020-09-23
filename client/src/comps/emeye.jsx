@@ -6,11 +6,8 @@ class FFF extends Component {
     render() {
         return (
             <div>
-                nimrod hamelehhhh
-                <Button variant="outline-warning">Warning</Button>{' '}
-               
+                <Button variant="outline-warning">Login</Button>{' '}        
             </div>
-
 
         );
 
