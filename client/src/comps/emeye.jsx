@@ -9,7 +9,6 @@ class FFF extends Component {
                 <Button variant="outline-warning">Login</Button>{' '}        
             </div>
 
-
         );
 
 

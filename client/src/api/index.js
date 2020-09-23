@@ -4,14 +4,15 @@ const axios = require('axios')
 const api = axios.create({
     baseURL: "http://localhost:3001/api"
 })
+    
+ export const getAllGuides = () => api.get('/guides')
+ const apis ={
+    getAllGuides,
 
- const getAllGuides = () => api.get('/guides')
- 
-const apis = { getAllGuides }
+ }
+ export default apis;
 
-getAllGuides().then((res) => {
-    console.log(res.data.data);
-})
+
 
 //  const getAllGuidesMock = () => {
 //     return [
@@ -22,7 +23,6 @@ getAllGuides().then((res) => {
 //     ]
 // }
 
-// export default apis;
 
 /*
     Client -> Server

@@ -5,11 +5,13 @@ class Mains extends Component {
         return (
             
 
-            
-            <div class="form-group">
-                <label for="comment">Comment:</label>
-                <textarea class="form-control" rows="3" id="comment"></textarea>
+            <div>
+                hhhh
             </div>
+            // <div class="form-group">
+            //     <label for="comment">Comment:</label>
+            //     <textarea class="form-control" rows="3" id="comment"></textarea>
+            // </div>
 
         );
     }

@@ -1,35 +1,34 @@
-
-
+/* 
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px 0;
-  }
-.Home{
-  
-}
-  .Login form {
+  } */
+
+/* .Login form {
     margin: 0 auto;
     max-width: 320px;
   }
-}
-body{
+} */
+body {
   font-family: Arial, Helvetica, Sans-Serif;
-  background-image: url(./compsPicture/u0.png);  
- background-color: #cccccc; 
- height: 600px; 
- background-position: center;
- background-repeat: no-repeat; 
- background-size: cover; 
-} 
-.search{
+  background-image: url(./compsPicture/u0.png);
+  background-color: #cccccc;
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.title {
   font-size: 55px;
   color: black;
   font-weight: bold;
-  font-family:Arial, Helvetica, sans-serif;
-  margin-top:110px;
-  margin-left: 200px;
-
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 110px;
+  margin-left: 50px;
 }
+
 /* .pic{
   display: flex;
   justify-content:space-between;
@@ -40,27 +39,27 @@ body{
   justify-content:space-between;
   margin-top: 270px;
   /* margin-left: 10%; */
-  /* margin-right: 10%; */
+/* margin-right: 10%; */
 /* }  */
-#item{
-  
+.container {
   display: flex;
-  align-self: flex-start;
-  
+
 }
-.logo{
+
+.logo {
   font-weight: bold;
   font-size: 40px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: aquamarine;
-  
+
 }
-.bbbb{
+
+.bbbb {
   direction: rtl;
 }
 
 .App {
-  text-align:left;
+  text-align: left;
 
 }
 
@@ -77,12 +76,12 @@ body{
 
 .App-header {
   min-height: 100vh;
-   display: flex; 
+  display: flex;
   flex-direction: column;
-  align-items:left;
+  align-items: left;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color:white;
+  color: white;
 }
 
 .App-link {
@@ -93,6 +92,7 @@ body{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
