@@ -5,7 +5,7 @@ import TicketsContainer from '../components/TicketsContainer'
 
 function Homepage() {
     const [items, setItems] = useState([]);
-
+    
     useEffect(() => {
         getAllCategories()
             .then(res => {
