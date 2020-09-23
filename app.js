@@ -3,8 +3,12 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const cors = require('cors');
-const db=require('./db/index')
+const cors = require('cors')
+
+
+
+
+
 
 // const usersRouter = require('./routes/users');
 const guidesRouter = require('./routes/guide-router');

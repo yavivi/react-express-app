@@ -2,21 +2,7 @@
   "short_name": "TILOK APP",
   "name": "Create React App Sample",
   "icons": [
-    {
-      "src": "mentravel.gif",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "mentravel.gif",
-      "type": "image/jpg",
-      "sizes": "192x192"
-    },
-    {
-      "src": "mentravel.gif",
-      "type": "image/git",
-      "sizes": "512x512"
-    }
+  
   ],
   "start_url": ".",
   "display": "standalone",
