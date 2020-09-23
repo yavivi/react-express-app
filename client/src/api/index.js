@@ -8,7 +8,6 @@ const api = axios.create({
  export const getAllGuides = () => api.get('/guides')
  const apis ={
     getAllGuides,
-
  }
  export default apis;
 
