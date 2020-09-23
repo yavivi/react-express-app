@@ -6,7 +6,7 @@ import MenuItem from './MenuItem';
 //liClass is the css class for inner li html tag.
 //liClassClicked is the css class to add to inner li html tag when it is clicked.
 function Menu({ items, ulClass, liClass, liClassClicked }) {
-    const [clickedItemId, setClickedItemId] = useState(items[0]._id);
+    const [clickedItemId, setClickedItemId] = useState(1);
     function clickHandler(id) {
         setClickedItemId(id);
     }
