@@ -35,10 +35,10 @@ class Search extends Component {
 
     getSearchResult = (event) => {
         const change = this.state.items.filter((item) => {
-            return  item.country === this.state.country
-         
+            return item.cost===this.state.cost
+            //  item.country === this.state.country    
             // &&
-            // item.cost===this.state.cost
+            
 
         })
         this.setState({filterItems:change})
@@ -61,9 +61,9 @@ class Search extends Component {
                 <div className={style.searchContainer}>
                     {this.state.filterItems.map((item) => {
                         return <div>                         
-                            {item.country}
-                            {/* {item.city} */}
-                            {/* {item.cost}                          */}
+                            {/* {item.country}
+                            {item.city} */}
+                            {item.cost}                         
                         </div>
 
 

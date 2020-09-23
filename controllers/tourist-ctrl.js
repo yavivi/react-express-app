@@ -1,29 +1,29 @@
-const guide = require('../modules/guide-model');
+const tourist = require('../modules/tourist-model');
 
-const createGuide = (req, res) => {
+const createTourist = (req, res) => {
     const body = req.body;
 
     if (!body) {
         return res.status(400).json({
             success: false,
-            error: 'You must provide a Guide'
+            error: 'You must provide a tourist'
         })
     }
 
-    const Guide = new guide(body);
+    const tourist = new tourist(body);
 
-    if (!Guide) {
+    if (!tourist) {
         return res.status(400).json({
             success: false,
             error: err
         })
     }
 
-    Guide.save()
+    tourist.save()
         .then(() => {
             return res.status(201).json({
                 success: true,
-                id: Guide._id,
+                id: tourist._id,
                 message: 'user created!'
             })
         })
@@ -31,21 +31,21 @@ const createGuide = (req, res) => {
             console.log(error)
             return res.status(400).json({
                 error,
-                message: 'Guide not created!'
-
+                message: 'tourist not created!'
+               
             })
-
+            
         })
 }
 
-const getGuides = (req, res) => {
-    guide.find()
-        .then(guides => {
-            if (!guides.length) {
-                return res.status(404).json({ success: false, error: 'not a single guide was found' })
+const getTourists = (req, res) => {
+    tourist.find()
+        .then(tourists => {
+            if (!tourists.length) {
+                return res.status(404).json({ success: false, error: 'not a single tourist was found' })
             }
             else {
-                return res.status(200).json({ success: true, data: guides });
+                return res.status(200).json({ success: true, data: tourists });
             }
         })
         .catch(error => {
@@ -53,44 +53,43 @@ const getGuides = (req, res) => {
             return res.status(400).json({
                 success: false,
                 error: error,
-                message: 'Could not get guides!'
+                message: 'Could not get tourists!'
             })
         })
 }
-const deleteGuide1 = async (req, res) => {
-    await guide.findOneAndDelete({ _id: req.params.id }, (err, Guide) => {
+const deleteTourist1 = async (req, res) => {
+    await tourist.findOneAndDelete({ _id: req.params.id }, (err, tourist) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
-        if (!Guide) {
+        if (!tourist) {
             return res.statuse(404).json({ success: false, error: err })
         }
-        return res.status(200).json({ success: true, date: Guide })
+        return res.status(200).json({ success: true, date: tourist })
     }).catch(err => console.log(err))
 }
-const getGuideById = async (req, res) => {
-    await guide.findOne({ _id: req.params.id }, (err, guide) => {
+const getTouristById = async (req, res) => {
+    await tourist.findOne({ _id: req.params.id }, (err, tourist) => {
         if (err) {
-            return res.status(400).json({ success: false, error: `guide not found` })
+            return res.status(400).json({ success: false, error: `tourist not found` })
         }
-        if (!guide) {
-            return res.status(404).json({ success: false, error: `guide not found` })
+        if (!tourist) {
+            return res.status(404).json({ success: false, error: `tourist not found` })
         }
-        return res.status(200).json({ success: true, data: guide })
+        return res.status(200).json({ success: true, data: tourist })
     }).catch(err => console.log(err))
 }
-
-const updateGiude = (req, res) => {
+const updateTourist = (req, res) => {
     const body = req.body
 
-    guide.updateOne({ _id: req.params.id }, body)
+    tourist.updateOne({ _id: req.params.id }, body)
         .then(() => {
             return res.status(200).json({ seccess: true });
         })
         .catch(error => {
             return res.status(400).json({
                 error,
-                message: "Guide not updated!"
+                message: "tourist not updated!"
             })
         })
 
@@ -112,7 +111,7 @@ const updateGiude = (req, res) => {
 
 
 
-// const updateGuide1 = (req, res) => {
+// const updatetourist1 = (req, res) => {
 //     const body = req.body
 //     if (!body) {
 //         return res.status(400).json({
@@ -120,24 +119,24 @@ const updateGiude = (req, res) => {
 //             error: "you must provide a body to update",
 //         })
 //     }
-//     guide.first_name = body.first_name
-//     guide.last_name = body.last_name
-//     guide.class = body.class
-//     guide.lessons = body.lessons
+//     tourist.first_name = body.first_name
+//     tourist.last_name = body.last_name
+//     tourist.class = body.class
+//     tourist.lessons = body.lessons
 
-//     guide.save()
+//     tourist.save()
 //         .than(() => {
 //             return res.status(200).json({
 //                 success: true,
-//                 id: guide._id,
-//                 message: "Guide update!",
+//                 id: tourist._id,
+//                 message: "tourist update!",
 //             })
 
 //         })
 //         .catch(error => {
 //             return res.status(400).json({
 //                 error,
-//                 message: "Guide not updated!"
+//                 message: "tourist not updated!"
 //             })
 //         })
 
@@ -145,10 +144,10 @@ const updateGiude = (req, res) => {
 
 
 module.exports = {
-    getGuides,
-    getGuideById,
-    createGuide,
-    deleteGuide1,
-    updateGiude
-
+    getTourists,
+    getTouristById,
+    createTourist,
+    deleteTourist1,
+    updateTourist
+    
 }

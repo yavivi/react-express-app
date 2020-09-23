@@ -5,15 +5,15 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const db=require('./db/index')
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+
+// const usersRouter = require('./routes/users');
 const guidesRouter = require('./routes/guide-router');
+const touristsRouter = require('./routes/tourist-router');
+const adminRouter = require('./routes/admin-router');
+const loginAndregister= require('./routes/login-Registr-router')
+const search=require('./routes/search-router')
 
 const app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(cors());
@@ -26,13 +26,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Added to serve client static files
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api', guidesRouter);
+// app.use('/api',loginAndregister)
+// app.use('/users', usersRouter);
+app.use('/api', guidesRouter,touristsRouter,adminRouter,loginAndregister);
+// app.use('/api', touristsRouter);
+// app.use('/api',adminRouter)
+app.use('/api/search',search)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
+
 });
 
 // error handler
