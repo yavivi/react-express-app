@@ -1,15 +1,27 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import DemoTicket from '../DemoTicket';
-import {getAllTickets} from '../../apis/ticketsApi';
+import { getAllTickets } from '../../apis/ticketsApi';
 
-export default function TicketsContainer() {
+let allTickets = [];
+
+export default function TicketsContainer({ categoryId }) {
     const [tickets, setTickets] = useState([]);
-
+    // const [categoryId, setCategoryId] = useState(1);
     useEffect(() => {
         getAllTickets()
-            .then(res => setTickets(res.data.data))
+            .then(res => {
+                allTickets = res.data.data;
+                setTickets(allTickets);
+            })
             .catch(error => console.log(error));
     }, []);
+
+    useEffect(() => {
+        setTickets(allTickets.filter((ticket) => {
+                return  categoryId === '1' || ticket.category_Id === categoryId;
+            })
+        )
+    }, [categoryId]);
 
     return (
         <div className="tickets-container">
