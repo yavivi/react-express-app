@@ -61,11 +61,12 @@
   cursor: pointer;
 }
 
-.demo-ticket {
-  width: 180px;
-  height: 220px;
+.ticket {
+  /* width: 180px; */
+  /* height: 220px; */
   border: 1px solid grey;
   border-radius: 10px;
+  margin: 20px 20px;
 }
 
 .tickets-container{
@@ -75,8 +76,4 @@
   justify-content: center;
   width: 60%;
   margin: 0 auto;
-}
-
-.demo-ticket{
-  margin: 20px 40px;
 }

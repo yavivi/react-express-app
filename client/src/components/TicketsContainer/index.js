@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import DemoTicket from '../DemoTicket';
-import { getAllTickets } from '../../apis/ticketsApi';
+import React, {useEffect, useState} from 'react'
+// import DemoTicket from '../DemoTicket';
+import {getAllTickets} from '../../apis/ticketsApi';
+import CardComponent from '../CardComponent';
 
 let allTickets = [];
 
@@ -25,7 +26,8 @@ export default function TicketsContainer({ categoryId }) {
 
     return (
         <div className="tickets-container">
-            {tickets.map((ticket) => <DemoTicket key={ticket._id} ticket={ticket} />)}
+            {/* {tickets.map((ticket) => <DemoTicket key={ticket._id} ticket={ticket} />)} */}
+            {tickets.map((ticket) => <CardComponent key={ticket._id} eventInfo={ticket} />)}
         </div>
     )
 }

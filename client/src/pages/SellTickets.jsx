@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Date from '../components/Sell/DatePicker'
 import Event from '../components/Sell/EventName';
 
