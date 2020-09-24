@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MenuItem from './MenuItem';
+import classNames from 'classnames';
 
 //items must be an array of objects with id and text properties. example:[{_id:1, name:'someText'}]
 //ulClass is the css class for inner ul html tag.
@@ -11,8 +12,10 @@ function Menu({ items, ulClass, liClass, liClassClicked, onItemClicked }) {
         setClickedItemId(id);
         onItemClicked(id);
     }
+    // classNames({liClass : true, liClassClicked : item._id === clickedItemId})
+    // liClass + (item._id === clickedItemId ? ' '+liClassClicked : '')
     return <ul className={ulClass}>
-        {items.map((item) => <MenuItem key={item._id} liClass={liClass + (item._id === clickedItemId ? ' '+liClassClicked : '')} item={item} clickHandler={clickHandler} />)}
+        {items.map((item) => <MenuItem key={item._id} liClass={classNames({[liClass] : true, [liClassClicked] : item._id === clickedItemId})} item={item} clickHandler={clickHandler} />)}
     </ul>
 }
 
