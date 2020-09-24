@@ -1,25 +1,27 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Homepage, LoginPage, PublishTicket, SellerDashboard, TicketManagement, SignupPage ,SellTickets, TicketDetails } from './pages';
-import MainNavbar from './components/MainNavbar';
+import { Homepage, LoginPage, PublishTicket, SellerDashboard, TicketManagement, SignupPage, SellTickets, TicketDetails } from './pages';
+import Header from './components/MainNavbar';
 import Footer from './components/Footer';
 
 function App() {
     return <>
-        <MainNavbar />
-        <Router>
-            <Switch>
-                <Route path="/" exact component={Homepage} />
-                <Route path="/sellers/login" exact component={LoginPage} />
-                <Route path="/sellers/signup" exact component={SignupPage} />
-                <Route path="/sellers/dashboard" exact component={SellerDashboard} />
-                <Route path="/sellers/publish-ticket" exact component={PublishTicket} />
-                <Route path="/sellers/ticket/:id/management" exact component={TicketManagement} />
-                <Route path="/sellers/SellTickets" exact component={SellTickets} />
-                <Route path="/tickets/:id/" exact component={TicketDetails} />
-            </Switch>
-        </Router>
+        <Header />
+        <main>
+            <Router>
+                <Switch>
+                    <Route path="/" exact component={Homepage} />
+                    <Route path="/sellers/login" exact component={LoginPage} />
+                    <Route path="/sellers/signup" exact component={SignupPage} />
+                    <Route path="/sellers/dashboard" exact component={SellerDashboard} />
+                    <Route path="/sellers/publish-ticket" exact component={PublishTicket} />
+                    <Route path="/sellers/ticket/:id/management" exact component={TicketManagement} />
+                    <Route path="/sellers/SellTickets" exact component={SellTickets} />
+                    <Route path="/tickets/:id/" exact component={TicketDetails} />
+                </Switch>
+            </Router>
+        </main>
         <Footer />
     </>
 }
