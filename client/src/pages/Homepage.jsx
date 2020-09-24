@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Menu from '../components/Menu';
 import { getAllCategories } from '../apis/categoriesApi';
-import TicketsContainer from '../components/TicketsContainer'
+import TicketsContainer from '../components/TicketsContainer';
+import Banner from '../components/Banner';
 
 function Homepage() {
     const [items, setItems] = useState([]);
-    
+
     const [categoryId, setCategoryId] = useState(null);
 
     useEffect(() => {
@@ -23,8 +24,9 @@ function Homepage() {
     }
 
     return <div>
-            <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" onItemClicked={updateCategoryId}/>
-            <TicketsContainer categoryId={categoryId}/>
+        <Banner />
+        <Menu items={items} ulClass="category-menu" liClass="category-item" liClassClicked="category-item-clicked" onItemClicked={updateCategoryId} />
+        <TicketsContainer categoryId={categoryId} />
     </div>
 }
 
