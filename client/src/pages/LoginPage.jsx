@@ -46,10 +46,7 @@ class LoginPage extends Component {
   }
 
   render() {
-    // NOTE: I use data-attributes for easier E2E testing
-    // but you don't need to target those (any css-selector will work)
-
-    return (
+      return (
       <div className="Login">
        <form onSubmit={this.handleSubmit}>
         
