@@ -1,5 +1,3 @@
-// /// import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-
 import React, { Component } from 'react';
 import logo from '../pics/logicon.png'; 
 class LoginPage extends Component {
