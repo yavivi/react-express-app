@@ -6,7 +6,7 @@ const createCategory = (req,res) => {
     if(!body){
         return res.status(400).json({
             success: false,
-            error: 'You must provide a categoty'
+            error: 'You must provide a category'
         })
     }
     const category = new Category(body);

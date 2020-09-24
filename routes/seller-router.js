@@ -1,4 +1,5 @@
 const express = require('express');
+const passport = require('passport');
 const sellersCtrl = require('../controllers/seller-ctrl.js');
 const router = express.Router();
 

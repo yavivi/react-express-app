@@ -3,12 +3,15 @@ const mongoose= require('mongoose')
 
 const createSeller = (req,res) => {
     const body = req.body;
-    if(!body){
+    if (!body) {
         return res.status(400).json({
             success: false,
             error: 'You must provide a seller'
         })
     }
+
+    // const password = bcrypt.hash(body.password);
+
     const seller = new Seller(body);
 
     if(!seller){
@@ -34,9 +37,9 @@ const createSeller = (req,res) => {
         })
 }
 const getSellers = (req,res) => {
-   Seller.find()
+    Seller.find()
         .then(sellers => {
-                return res.status(200).json({ success:true,data:sellers});
+                return res.status(200).json({ success:true, data: sellers });
         })
         .catch(error => {
             return res.status(400).json({

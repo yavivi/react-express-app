@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../pics/logicon.png'; 
+import { loginRequest } from "../apis/loginApi";
+
 class LoginPage extends Component {
   constructor() {
     super();
@@ -30,7 +32,11 @@ class LoginPage extends Component {
       return this.setState({ error: 'Password is required' });
     }
 
-    return this.setState({ error: 'good' });
+    loginRequest(this.state.email, this.state.password).then((d) => {
+      this.setState({ error: 'Login OK' });
+    }, (error) => {
+      this.setState({ error: 'Login Failed' });
+    });
   }
 
   handleEmailChange(evt) {

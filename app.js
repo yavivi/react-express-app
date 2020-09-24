@@ -5,17 +5,54 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 const db = require('./db/index');
-db.on('error',console.error.bind(console,'mongo connection error'))
+const passport = require('passport');
+const localStrategy = require('passport-local');
+const expressSession = require('express-session');
+db.on('error',console.error.bind(console,'mongo connection error'));
 
 var usersRouter = require('./routes/users');
 var categoriesRouter = require('./routes/category-router');
 var sellersRouter = require('./routes/seller-router');
 var ticketsRouter = require('./routes/ticket-router');
+var loginRouter = require('./routes/login-router');
+const SellerModel = require('./models/seller-model');
 
 
 
 
 var app = express();
+passport.use(new localStrategy.Strategy(
+  {
+    usernameField: "email",
+    password: "password",
+    session: true
+  },
+  function(email, password, done) {
+    SellerModel.findOne({ email }, function (err, seller) {
+      if (err) { return done(err); }
+      if (!seller) { return done(null, false); }
+      // if (!seller.verifyPassword(password)) { return done(null, false); }
+      // bcrypt.compare(password, seller.password, (ok) => {
+
+      // })
+      if (seller.password !== password) { return done(null, false); }
+      return done(null, seller);
+    });
+  }
+));
+
+passport.serializeUser(function(seller, done) {
+  done(null, seller.id); 
+});
+
+passport.deserializeUser(function(id, done) {
+  SellerModel.findById(id, function(err, user) {
+      done(err, user);
+  });
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +62,9 @@ app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(expressSession({
+  secret: "1231312"
+}));
 
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === 'production') {
@@ -44,10 +84,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
 
+
 app.use('/users', usersRouter); 
 app.use('/category', categoriesRouter);  
 app.use('/seller', sellersRouter);
 app.use('/ticket', ticketsRouter);
+app.use('/login', loginRouter);
 
 
 app.get('/*', (req, res) => {
