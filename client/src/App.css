@@ -77,3 +77,14 @@
   width: 60%;
   margin: 0 auto;
 }
+
+.main-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25vh;
+  text-align: center;
+  background-color: #b9b9b9;
+  font-size: 1.4rem;
+  font-weight: 500;
+}

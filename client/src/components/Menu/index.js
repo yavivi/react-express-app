@@ -12,8 +12,6 @@ function Menu({ items, ulClass, liClass, liClassClicked, onItemClicked }) {
         setClickedItemId(id);
         onItemClicked(id);
     }
-    // classNames({liClass : true, liClassClicked : item._id === clickedItemId})
-    // liClass + (item._id === clickedItemId ? ' '+liClassClicked : '')
     return <ul className={ulClass}>
         {items.map((item) => <MenuItem key={item._id} liClass={classNames({[liClass] : true, [liClassClicked] : item._id === clickedItemId})} item={item} clickHandler={clickHandler} />)}
     </ul>
