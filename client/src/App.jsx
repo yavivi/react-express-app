@@ -16,9 +16,9 @@ function App() {
                 <Route path="/sellers/publish-ticket" exact component={PublishTicket} />
                 <Route path="/sellers/ticket/:id/management" exact component={TicketManagement} />
                 <Route path="/sellers/SellTickets" exact component={SellTickets} />
-
             </Switch>
         </Router>
+    
     </div>
 }
 
