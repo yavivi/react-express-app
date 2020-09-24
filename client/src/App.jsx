@@ -3,9 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Homepage, LoginPage, PublishTicket, SellerDashboard, TicketManagement, SignupPage ,SellTickets, TicketDetails } from './pages';
 import MainNavbar from './components/MainNavbar';
+import Footer from './components/Footer';
 
 function App() {
-    return <div>
+    return <>
         <MainNavbar />
         <Router>
             <Switch>
@@ -19,8 +20,8 @@ function App() {
                 <Route path="/tickets/:id/" exact component={TicketDetails} />
             </Switch>
         </Router>
-    
-    </div>
+        <Footer />
+    </>
 }
 
 export default App;
