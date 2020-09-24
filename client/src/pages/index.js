@@ -4,5 +4,7 @@ import PublishTicket from './PublishTicket';
 import SellerDashboard from './SellerDashboard';
 import TicketManagement from './TicketManagement';
 import SignupPage from './SignupPage';
+import SellTickets from './SellTickets';
 
-export { Homepage, LoginPage, PublishTicket, SellerDashboard, TicketManagement, SignupPage };
+
+export { Homepage, LoginPage, PublishTicket, SellerDashboard, TicketManagement, SignupPage, SellTickets };

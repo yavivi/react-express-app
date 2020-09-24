@@ -1,0 +1,16 @@
+.card {
+    width: 210px;
+    border: 1px solid lightslategray;
+}
+
+.card > * {
+    font-weight: 300;
+}
+
+.eventImgContainer {
+    text-align: center;
+}
+
+.eventImg {
+    width: 90%;
+}

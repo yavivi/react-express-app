@@ -5,10 +5,11 @@ import MenuItem from './MenuItem';
 //ulClass is the css class for inner ul html tag.
 //liClass is the css class for inner li html tag.
 //liClassClicked is the css class to add to inner li html tag when it is clicked.
-function Menu({ items, ulClass, liClass, liClassClicked }) {
-    const [clickedItemId, setClickedItemId] = useState(1);
+function Menu({ items, ulClass, liClass, liClassClicked, onItemClicked }) {
+    const [clickedItemId, setClickedItemId] = useState('1');
     function clickHandler(id) {
         setClickedItemId(id);
+        onItemClicked(id);
     }
     return <ul className={ulClass}>
         {items.map((item) => <MenuItem key={item._id} liClass={liClass + (item._id === clickedItemId ? ' '+liClassClicked : '')} item={item} clickHandler={clickHandler} />)}
