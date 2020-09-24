@@ -34,7 +34,6 @@ class AllGuides extends Component {
             {item.country}
             {item.city}
             {item.cost}
-            {/* {item.start_date} */}
             {item.Language}
             
           </div>
