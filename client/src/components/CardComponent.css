@@ -1,6 +1,8 @@
 .card {
     width: 210px;
     border: 1px solid lightslategray;
+    background-color: #eee;;
+    border: 5px solid grey;
 }
 
 .card > * {
@@ -9,6 +11,8 @@
 
 .eventImgContainer {
     text-align: center;
+    border: 5px solid grey;
+    
 }
 
 .eventImg {
