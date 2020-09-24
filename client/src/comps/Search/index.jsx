@@ -36,7 +36,7 @@ class Search extends Component {
     getSearchResult = (event) => {
         const change = this.state.items.filter((item) => {
             return item.cost===this.state.cost
-            //  item.country === this.state.country    
+            && item.country === this.state.country    
             // &&
             
 
