@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Homepage, LoginPage, PublishTicket, SellerDashboard, TicketManagement, SignupPage ,SellTickets } from './pages';
-// import TicketComponent from './components/TicketComponent';
-
+import MainNavbar from './components/MainNavbar';
 
 function App() {
     return <div>
+        <MainNavbar />
         <Router>
             <Switch>
                 <Route path="/" exact component={Homepage} />

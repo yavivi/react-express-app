@@ -94,9 +94,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 25vh;
+  height: 30vh;
   text-align: center;
   background-color: #b9b9b9;
   font-size: 1.4rem;
   font-weight: 500;
+}
+
+.main-navbar {
+  display: flex;
+  background-color: #fafafa;
+  padding: 15px 5vw;
+}
+
+.link-button {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link-button:active {
+  color: unset;
+}
+
+.sell-tickets-btn {
+  margin-inline-start: auto;
+  padding: 8px 25px;
+  color: white;
+  border-radius: 3px;
+  background-color: #555555;
 }
