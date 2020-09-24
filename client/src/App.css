@@ -77,3 +77,26 @@
   width: 60%;
   margin: 0 auto;
 }
+  .Login {
+    padding: 60px 0;
+  }
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  .Login input {
+    margin: 10px 0;
+    display: block;
+    box-sizing: border-box;
+  }
+
+.main-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25vh;
+  text-align: center;
+  background-color: #b9b9b9;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
