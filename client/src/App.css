@@ -72,8 +72,9 @@ main {
   height: 30vh;
   text-align: center;
   background-color: #b9b9b9;
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 header {
