@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import {getAllTickets} from '../../apis/ticketsApi';
-import CardComponent from '../CardComponent';
+import {getAllTickets} from '../../../apis/ticketsApi';
+import CardComponent from './CardComponent';
 
 let allTickets = [];
 
