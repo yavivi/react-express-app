@@ -1,55 +1,56 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Dropdown } from 'react-bootstrap';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  // Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import AllGuide from './pages/AllGuides'
+import SignIn from './pages/Signin'
+import Login from './pages/Login/index'
+import Home from './pages/Home/index'
 
-function App() {
-  const [users, setUsers] = useState([]);
+// import FFF from './comps/emeye';
 
-  useEffect(() => {
-    // Address should be replaced with FQDN of application and taken from ENV
-    const domain = process.env.REACT_APP_DOMAIN;
-    const http = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-    fetch(`${http}://${domain}/users`, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      }
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-      }).catch((err) => console.log(err));
-  }, []);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit&nbsp;
-          <code>src/App.jsx</code>
-          &nbsp;and save to reload me!
-          <br />
-          Running in
-          &nbsp;
-          {process.env.NODE_ENV}
-          &nbsp;
-          mode
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Users List from Server:
-          {
-            users.map((user) => (<div key={user.id}>{user.name}</div>))
-          }
-        </a>
-      </header>
-    </div>
-  );
-}
+// import Mains from './comps/main';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <div className="logo">
+          TILOK
+         </div>
+
+        <Router >
+
+          <Dropdown>
+            {/* <h1>become a tour guide</h1> */}
+
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              <svg width="50px" height="30px" viewBox="0 0 16 16" className="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+              </svg>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item><Link to="/">Home</Link></Dropdown.Item>
+              <Dropdown.Item><Link to="/login">login</Link></Dropdown.Item>
+              <Dropdown.Item><Link to="/signin">signin</Link></Dropdown.Item>
+              <Dropdown.Item><Link to="/allguides">allguides</Link></Dropdown.Item>
+
+
+            </Dropdown.Menu>
+          </Dropdown>
+          <Route exact path="/" component={Home}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/signin" component={SignIn}/>
+          <Route path="/allguides" component={AllGuide} />
+        </Router>
+      </div>
+    );
+  }
+};
 export default App;
