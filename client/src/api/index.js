@@ -1,10 +1,12 @@
 import axios from "axios";
 
-const api=axios.create({
-    baseURL:"http://localhost:3001/api"
+const api = axios.create({
+    baseURL: "http://localhost:3001/api"
 })
-export const getAllGuide=()=>api.get('/guides')
+export const getAllGuides = () => api.get('/guides')
 
-const apis={getAllGuide}
+export const searchGuides = (country, lang,city,cost) => api.get(`search/country/${country}/lang/${lang}/city/${city}/cost/${cost}`)
+
+const apis = { getAllGuides, searchGuides }
 
 export default apis;

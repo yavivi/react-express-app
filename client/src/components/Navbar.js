@@ -30,7 +30,7 @@ function Navbar() {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             Tilok
-            <i class='fab fa-typo3' />
+            <i className='fab fa-typo3' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -59,8 +59,18 @@ function Navbar() {
                 Country
               </Link>
             </li>
+            <li className='nav-item'>
+              <Link
+                to='/sign-up'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                sign-up
+              </Link>
+            </li>
+            
 
-            <li>
+            {/* <li className='nav-item'>
               <Link
                 to='/sign-up'
                 className='nav-links-mobile'
@@ -68,9 +78,9 @@ function Navbar() {
               >
                 Sign Up
               </Link>
-            </li>
+            </li> */}
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+          {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
         </div>
       </nav>
     </>

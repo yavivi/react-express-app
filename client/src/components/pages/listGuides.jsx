@@ -1,7 +1,7 @@
 import React from 'react';
 import api from '../../api'
 import ListItem from '../ListDisplay';
- 
+
 
 const TableRow= ({rows})=>{
     return(
@@ -24,7 +24,7 @@ class List extends React.Component {
         }
     }
     componentDidMount = async () => {
-        await api.getAllGuide().then(res=>{
+        await api.getAllGuides().then(res=>{
             this.setState({
                 guides: res.data.data
             })
