@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import './App.css';
+<<<<<<< HEAD
 import {
   BrowserRouter as Router,
   // Switch,
@@ -16,10 +17,21 @@ import Home from './pages/Home/index'
 
 
 // import Mains from './comps/main';
+=======
+import {Guides,Home} from './components/pages'
+import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+
+
+
+>>>>>>> client_search
 
 class App extends Component {
+
   render() {
     return (
+<<<<<<< HEAD
       <div className="container">
         <div className="logo">
           TILOK
@@ -50,6 +62,18 @@ class App extends Component {
           <Route path="/allguides" component={AllGuide} />
         </Router>
       </div>
+=======
+      <>
+        <Router>
+          <Navbar />
+          <Switch>
+
+            <Route path='/' exact component={Home} />
+            <Route path='/guides/listGuides' exact component={Guides} />
+          </Switch>
+        </Router>
+      </>
+>>>>>>> client_search
     );
   }
 };
