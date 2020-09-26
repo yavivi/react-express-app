@@ -1,24 +1,35 @@
 const guide = require("../modules/guide-model");
 
 const search = (req, res) => {
-  const query = {};
-  if (req.query.country) {
-    query.country = req.query.country;
-  }
-  if (req.query.language) {
-      //todo fix query language array
-    query.Language = req.query.language;
-  }
+  // const query = {};
+  // if (req.query.country != "" && req.query.country) {
+  //   query.country = req.query.country;
+  // }
+  // if (req.query.lang != "" && req.query.lang) {
+  //   //todo fix query language array
+  //   query.Language = req.query.lang;
+  // }
+  // if (req.query.city != "" && req.query.city) {
+  //   query.city = req.query.city;
+  // }
+  // if (req.query.cost != "" && req.query.cost) {
+  //   query.cost = req.query.cost;
+  // }
 
+
+  const { lang, country,city,cost } = req.params;
+  const q = { Language: lang, country,city,cost }
+debugger
   guide
-    .find(query)
+    .find(q)
     .then((guides) => {
+
       if (!guides.length) {
         return res
           .status(404)
           .json({
             success: false,
-            error: "not  found a single guide in thes country",
+            error: "not found a single guide in the chosen country",
           });
       }
       return res.status(200).json({ success: true, data: guides });
