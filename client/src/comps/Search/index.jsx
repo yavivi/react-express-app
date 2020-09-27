@@ -1,4 +1,4 @@
-import Axios from 'axios';
+// import Axios from 'axios';
 import React, { Component } from 'react';
 import { Form, FormControl, Button } from 'react-bootstrap';
 import * as style from "./Search.module.css";
@@ -11,13 +11,13 @@ class Search extends Component {
         this.state =
         {
             items: [],
-            filterItems:[],
+            filterItems: [],
             country: '',
             city: '',
             cost: '',
             start_date: '',
             end_date: '',
-            Language: '',   /*להוסיף שיהיה מערך */
+            Language: [],   /*להוסיף שיהיה מערך */
             searchResult: []
         }
     };
@@ -35,13 +35,27 @@ class Search extends Component {
 
     getSearchResult = (event) => {
         const change = this.state.items.filter((item) => {
+<<<<<<< HEAD
             return item.cost===this.state.cost
             && item.country === this.state.country    
             // &&
             
+=======
+            return item.country === this.state.country
+                && item.city === this.state.city
+                && item.Language === this.state.Language[0]
+>>>>>>> origin/Giladd
 
-        })
-        this.setState({filterItems:change})
+        }
+            // ,
+            // item.filter(Language => Language.includes('') ).map(filteredName => (
+            //     <li>
+            //         {filteredName}
+            //     </li>
+            // ))
+        )
+
+        this.setState({ filterItems: change })
     }
 
 
@@ -52,7 +66,7 @@ class Search extends Component {
                 <Form onClick={this.getSearchResult}>
                     <FormControl name="country" type="text" onChange={this.changeHandler} placeholder="country" />
                     <FormControl name="city" type="text" onChange={this.changeHandler} placeholder="city" />
-                    <FormControl name="cost" type="number" onChange={this.changeHandler} placeholder="price" />
+                    {/* <FormControl name="cost" type="number" onChange={this.changeHandler} placeholder="price" /> */}
                     <FormControl name="start_date" type="date" onChange={this.changeHandler} placeholder="startDate" />
                     <FormControl name="end_date" type="date" onChange={this.changeHandler} placeholder="endDate" />
                     <FormControl name="Language" type="text" onChange={this.changeHandler} placeholder="Language" />
@@ -60,13 +74,13 @@ class Search extends Component {
                 </Form>
                 <div className={style.searchContainer}>
                     {this.state.filterItems.map((item) => {
-                        return <div>                         
-                            {/* {item.country}
-                            {item.city} */}
-                            {item.cost}                         
+                        return <div>
+                            {item.country}
+                            {item.first_name}
+                            {item.last_name}
+                            {item.city}
+                            {item.Language}
                         </div>
-
-
                     })}
                 </div>
 
