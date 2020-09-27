@@ -30,16 +30,16 @@ function Cards() {
               path='/services'
             />
             <CardItem
-              src='images/img-4.jpg'
+              src='pictures/Extreme.jpg'
               text='Experience Football on Top of the Himilayan Mountains'
               label='Adventure'
               path='/products'
             />
             <CardItem
-              src='images/img-8.jpg'
+              src='pictures/Extreme.jpg'
               text='Ride through the Sahara Desert on a guided camel tour'
               label='Adrenaline'
-              path='/sign-up'
+              path='/signUp'
             />
           </ul>
         </div>
