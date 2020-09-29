@@ -54,7 +54,7 @@ class SellTickets extends Component {
 
             <label for="appt">Select a time:</label>
             <input type="time" id="appt" />
-            <button  type="submit">Done</button>
+              <button  type="submit">Done</button>
   
             <Date/>
 
@@ -67,7 +67,7 @@ class SellTickets extends Component {
             <label for="row">Enter the row of seat:</label>
             <input placeholder="row" type="text"/>
   
-            <label for="desseller_Idcription">Seller Id:</label>
+            <label for="seller_Id">Seller Id:</label>
             <input placeholder="seller_Id" type="text"/>//from dataBase
   
             <label for="description">description:</label>
