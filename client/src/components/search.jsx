@@ -81,6 +81,7 @@ class Search extends Component {
                         <option>spanish</option>
                         <option>hebrew</option>
                         <option>english</option>
+                        <option>french</option>
                       </select>
                     </div>
                     <div className="col-lg-3 col-md-3 col-sm-12 p-0">
