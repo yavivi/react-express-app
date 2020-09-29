@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './css/navBar.css';
+import { FcGlobe } from "react-icons/fc";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -47,7 +48,7 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Guide
+                Guides
               </Link>
             </li>
             <li className='nav-item'>
