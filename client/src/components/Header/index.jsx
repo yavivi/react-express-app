@@ -2,11 +2,11 @@ import React from 'react'
 import LinkButton from '../LinkButton'
 import Logo from '../Logo'
 
-export default function MainNavbar() {
+export default function Header() {
     return (
-        <div className="main-navbar">
+        <header>
             <Logo />
             {window.location.pathname === '/' && <LinkButton className="sell-tickets-btn" url="/sellers/login" text="SELL TICKETS"/>}
-        </div>
+        </header>
     )
 }
