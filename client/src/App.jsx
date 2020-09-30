@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Homepage, LoginPage, PublishTicket, SellerDashboard, TicketManagement, SignupPage, SellTickets, TicketDetails } from './pages';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { WithLoginRequired } from './components/WithLoginRequired';
 
 function App() {
     return <>
@@ -15,7 +16,7 @@ function App() {
                     <Route path="/sellers/login" exact component={LoginPage} />
                     <Route path="/sellers/signup" exact component={SignupPage} />
                     <Route path="/sellers/dashboard" exact component={SellerDashboard} />
-                    <Route path="/sellers/publish-ticket" exact component={PublishTicket} />
+                    <Route path="/sellers/publish-ticket" exact component={WithLoginRequired(PublishTicket, LoginPage)} />
                     <Route path="/sellers/ticket/:id/management" exact component={TicketManagement} />
                     <Route path="/sellers/SellTickets" exact component={SellTickets} />
                     <Route path="/tickets/:id/" exact component={TicketDetails} />
