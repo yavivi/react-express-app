@@ -7,8 +7,8 @@ var cors = require('cors');
 const db = require('./db/index');
 const passport = require('passport');
 const localStrategy = require('passport-local');
-const expressSession = require('express-session');
 db.on('error',console.error.bind(console,'mongo connection error'));
+const bcrypt = require('bcrypt');
 
 var usersRouter = require('./routes/users');
 var categoriesRouter = require('./routes/category-router');
@@ -24,20 +24,22 @@ var app = express();
 passport.use(new localStrategy.Strategy(
   {
     usernameField: "email",
-    password: "password",
-    session: true
+    password: "password"
   },
   function(email, password, done) {
     SellerModel.findOne({ email }, function (err, seller) {
-      if (err) { return done(err); }
+      if (err) { return  done(err) }
+      // if (!seller) { return res.status(200).json({success:false,message:'email not found'}) }
       if (!seller) { return done(null, false); }
-      // if (!seller.verifyPassword(password)) { return done(null, false); }
-      // bcrypt.compare(password, seller.password, (ok) => {
-
-      // })
-      if (seller.password !== password) { return done(null, false); }
-      return done(null, seller);
-    });
+      bcrypt.compare(password, seller.password, (err, result) => {
+        if (result === true) {
+            return done(null, seller);
+          } else {
+            return done(null, false);
+            //  return res.status(200).json({success:false,message:'incorrect password'}); 
+          }
+        }); 
+       });
   }
 ));
 
@@ -51,9 +53,6 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -62,9 +61,10 @@ app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(expressSession({
-  secret: "1231312"
-}));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === 'production') {

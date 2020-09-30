@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../pics/logicon.png'; 
+import { loginRequest } from '../apis/login-Api'
 
 class LoginPage extends Component {
   constructor() {
