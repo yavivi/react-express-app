@@ -20,7 +20,7 @@ const time = dateObject.toLocaleTimeString();
             |
             <span className="hour">{time}</span>
             <p className="location">{eventInfo.location}</p>
-            <p className="sellerName">{eventInfo.seller_Id}</p>
+            {/* <p className="sellerName">{eventInfo.seller_Id}</p> */}
             <p className="price">{eventInfo.price} ₪</p>
         </div>
     )
