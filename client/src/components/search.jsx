@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AlignItemsList from "./searchResult";
+import SearchResults from "./newSearchResult";
 import { searchGuides } from "../api/index";
 // import { ListItemAvatar } from '@material-ui/core';
 
@@ -100,20 +101,27 @@ class Search extends Component {
           </div>
         </section>
         <div>
+        
+        <hgroup class="mb20">
+            <h1>Search Results</h1>
+            <h2 class="lead"><strong class="text-danger">{filterItems.length}</strong> results were found </h2>								
+        </hgroup>
 
           {filterItems &&
             filterItems.map((item) => (
               <div>
-                <AlignItemsList
+                <SearchResults
+                pic={item.pic}
                   first_name={item.first_name}
                   last_name={item.last_name}
                   cost={item.cost}
                   country={item.country}
                   city={item.city}
-                  to="/guides/listGuides"
+                  // to="/"
                 />
               </div>
             ))}
+            
         </div>
       </div>
     );
