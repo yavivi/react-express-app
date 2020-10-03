@@ -3,6 +3,7 @@ import AlignItemsList from "./searchResult";
 import SearchResults from "./newSearchResult";
 import { searchGuides } from "../api/index";
 import { AppContext } from "../context/appContext";
+
 // import { ListItemAvatar } from '@material-ui/core';
 
 const Search = (props) => {
@@ -14,7 +15,6 @@ const Search = (props) => {
     cost: "",
     language: "" /*להוסיף שיהיה מערך */,
     searchResult: [],
-    
   });
 
   const changeHandler = (event) => {
@@ -34,16 +34,22 @@ const Search = (props) => {
       cost.trim()
     );
     const guides = response.data.data;
-    
+
     appContext.setState({ filterItems: guides });
     if (props.history) {
       props.history.push("/guides/listGuides");
     }
   };
 
+  const sortByCost = () => {
+    appContext.state.filterItems.sort((a, b) => a.cost.localeCompare(b.cost));
+    // appContext.state.filterItems.sort((a, b) => Number(a) < Number(b) ? -1 : Number(a) > Number(b) ? 1 : 0);
+    appContext.setState({ filterItems: appContext.state.filterItems });
+  };
+
   const { filterItems } = state;
   return (
-    <div>
+    <div className="searchContainer">
       <section className="search-sec">
         <div className="container">
           <form action="#" method="post" novalidate="novalidate">
@@ -106,8 +112,8 @@ const Search = (props) => {
           </form>
         </div>
       </section>
-      <div>
-       { appContext.state.filterItems.length!=0?
+
+      {/* { appContext.state.filterItems.length!=0?
        <hgroup class="mb20">
           <h1>Search Results</h1>
           <h2 class="lead">
@@ -116,25 +122,32 @@ const Search = (props) => {
           </h2>
         </hgroup>
         :""
-        }
-       
-
-        {props.showResult &&
-          appContext.state.filterItems &&
-          appContext.state.filterItems.map((item, index) => (
-            <div key={index}>
-              <SearchResults
-                pic={item.pic}
-                first_name={item.first_name}
-                last_name={item.last_name}
-                cost={item.cost}
-                country={item.country}
-                city={item.city}
-                // to="/"
-              />
-            </div>
-          ))}
+        } */}
+      {/* <div>
+        <Sort array={appContext.state.filterItems}></Sort>
+        </div> */}
+      <div>
+        <button type="button" onClick={sortByCost} className="sortBtn">
+          Price lowest first
+        </button>
       </div>
+
+      {props.showResult &&
+        appContext.state.filterItems &&
+        appContext.state.filterItems.map((item, index) => (
+          <div className="results" key={index}>
+            <SearchResults
+              pic={item.pic}
+              first_name={item.first_name}
+              last_name={item.last_name}
+              cost={item.cost}
+              country={item.country}
+              city={item.city}
+
+              // to="/"
+            />
+          </div>
+        ))}
     </div>
   );
 };
