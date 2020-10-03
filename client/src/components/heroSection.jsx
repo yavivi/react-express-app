@@ -5,14 +5,14 @@ import './css/heroSection.css';
 import Search from './search'
 
 
-function HeroSection() {
+function HeroSection({history}) {
   return (
     <div className='hero-container'>
     
       <h1>Let's Traveled Together</h1>
       <p>What are you waiting for?</p>
       <div className='hero-btns'>
-        <Search />
+        <Search  history={history}/>
 
       </div>
     </div>

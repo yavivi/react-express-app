@@ -4,7 +4,7 @@
   box-sizing: border-box;
 } */
 body{
-  background: url('/pictures/img9.jpg') center center/cover no-repeat;
+  background: url('/assets/img9.jpg') center center/cover no-repeat;
 }
 
 label{
