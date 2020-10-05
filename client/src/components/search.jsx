@@ -1,5 +1,5 @@
 import React, { Component, useContext, useEffect, useState } from "react";
-import AlignItemsList from "./searchResult";
+
 import SearchResults from "./newSearchResult";
 import { searchGuides } from "../api/index";
 import { AppContext } from "../context/appContext";
@@ -28,11 +28,13 @@ const Search = (props) => {
   const getSearchResult = async () => {
     const { language, country, city, cost } = state;
     const response = await searchGuides(
-      country.trim(),
-      language.trim(),
-      city.trim(),
-      cost.trim()
+      country.trim().toLowerCase(),
+      language.trim().toLowerCase(),
+      city.trim().toLowerCase(),
+      cost.trim().toLowerCase()
+     
     );
+    console.log( country.trim().toLowerCase())
     const guides = response.data.data;
 
     appContext.setState({ filterItems: guides });
@@ -62,7 +64,7 @@ const Search = (props) => {
                       name="country"
                       onChange={changeHandler}
                       className="form-control search-slt"
-                      placeholder="country"
+                      placeholder="Country"
                     />
                   </div>
                   <div className="col-lg-3 col-md-3 col-sm-12 p-0">
@@ -80,7 +82,7 @@ const Search = (props) => {
                       name="cost"
                       onChange={changeHandler}
                       className="form-control search-slt"
-                      placeholder="cost"
+                      placeholder="Cost"
                     />
                   </div>
                   <div className="col-lg-3 col-md-3 col-sm-12 p-0">
@@ -112,24 +114,29 @@ const Search = (props) => {
           </form>
         </div>
       </section>
-
-      {/* { appContext.state.filterItems.length!=0?
-       <hgroup class="mb20">
-          <h1>Search Results</h1>
-          <h2 class="lead">
-            <strong class="text-danger">{appContext.state.filterItems.length}</strong> results
-            were found{" "}
-          </h2>
-        </hgroup>
-        :""
-        } */}
-      {/* <div>
-        <Sort array={appContext.state.filterItems}></Sort>
-        </div> */}
-      <div>
-        <button type="button" onClick={sortByCost} className="sortBtn">
-          Price lowest first
-        </button>
+      <div className="result-sort">
+        {appContext.state.filterItems.length != 0 ? (
+          <hgroup class="mb20">
+            <h1>Search Results</h1>
+            <h2 class="lead">
+              <strong class="text-danger">
+                {appContext.state.filterItems.length}
+              </strong>{" "}
+              results were found{" "}
+            </h2>
+          </hgroup>
+        ) : (
+          ""
+        )}
+        {appContext.state.filterItems.length != 0 ? (
+          <div>
+            <button type="button" onClick={sortByCost} className="sortBtn">
+              Price lowest first
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
 
       {props.showResult &&
