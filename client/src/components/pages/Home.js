@@ -2,7 +2,7 @@ import React from "react";
 import "../../App.css";
 import Cards from "../Card";
 import HeroSection from "../heroSection";
-// import Footer from '../Footer';
+import Footer from '../footer';
 
 function Home(props) {
   const history = props.history;
@@ -10,7 +10,7 @@ function Home(props) {
     <>
       <HeroSection history={history} />
       <Cards />
-      {/* <Footer /> */} */
+      <Footer /> 
     </>
   );
 }

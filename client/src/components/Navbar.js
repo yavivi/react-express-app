@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./css/navBar.css";
 import { FcGlobe } from "react-icons/fc";
 import logo from './Tilok-logo-white.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -31,12 +32,13 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            {/* Tilok <FcGlobe/>
-            <i className='fab fa-typo3' /> */}
+             {/* Tilok <FcGlobe/> */}
+            {/* <i className='fab fa-typo3' />  */}
             <img width="80px" height="70px" alt="Logo" src={logo} />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
+            {/* <i className={click ? "fas fa-times" : "fas fa-bars"} /> */}
+            <FontAwesomeIcon icon="play" size="1x" color="#6AA84F"/>
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
