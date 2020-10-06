@@ -51,6 +51,11 @@
   /* height: 80px; */
 }
 
+.btn-box {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links {
   color: #fff;
   display: flex;
@@ -113,13 +118,6 @@
     background-color: #fff;
     color: #242424;
     border-radius: 0;
-  }
-
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
   }
 
   .menu-icon {

@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 const initialState = {
-    filterItems: []
+    filterItems: [],
 };
 
 export const AppContext = createContext(initialState);
