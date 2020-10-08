@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
-import { Link } from 'react-router-dom';
-import './css/navBar.css';
+import React, { useState, useEffect } from "react";
+import { Button } from "./Button";
+import { Link } from "react-router-dom";
+import "./css/navBar.css";
 import { FcGlobe } from "react-icons/fc";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import logo from './Tilok-logo-white.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -25,67 +27,59 @@ function Navbar() {
     showButton();
   }, []);
 
-  window.addEventListener('resize', showButton);
+  window.addEventListener("resize", showButton);
 
   return (
-
-    <nav className='navbar'>
-      <div className='navbar-container'>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          Til<FcGlobe />k
-            <i className='fas fa-typo3' />
-        </Link>
-        <div className='menu-icon' onClick={handleClick}>
-
-          <FontAwesomeIcon icon="play" size="1x" color="white"/>
-          {/* <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-           */}
-           {/* <FontAwesomeIcon icon="bars" /> */}
-        </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Home
+    
+      <nav className="navbar">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+             {/* Tilok <FcGlobe/> */}
+            {/* <i className='fab fa-typo3' />  */}
+            <img width="80px" height="70px" alt="Logo" src={logo} />
+          </Link>
+          <div className="menu-icon" onClick={handleClick}>
+            {/* <i className={click ? "fas fa-times" : "fas fa-bars"} /> */}
+            <FontAwesomeIcon icon="play" size="1x" color="#6AA84F"/>
+          </div>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                Home
               </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/guides/listGuides'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Guides
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/guides/listGuides"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Guides
               </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/Countries'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Country
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/products"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Country
               </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/SignUp'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Sign Up
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/signUp"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Sign Up
               </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/Login'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Login
+            </li>
+            <li className="nav-item">
+              <Link to="/logIn" className="nav-links" onClick={closeMobileMenu}>
+                Log In
               </Link>
-          </li>
-
+            </li>
 
           {/* <li className='nav-item'>
               <Link
