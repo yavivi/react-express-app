@@ -25,19 +25,22 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='pictures/Extreme.jpg'
-              text='Extreme trip'
+              text='Extreme trip,
+              Skydiving'
               label='Mystery'
               path='/services'
             />
             <CardItem
-              src='pictures/Extreme.jpg'
+              src='pictures/Walibi.jpg'
+              text='Extreme trip'
               text='Experience Football on Top of the Himilayan Mountains'
               label='Adventure'
               path='/products'
             />
             <CardItem
-              src='pictures/Extreme.jpg'
-              text='Ride through the Sahara Desert on a guided camel tour'
+              src='pictures/slider.jpg'
+              text='Extreme trip'
+              // text='Ride through the Sahara Desert on a guided camel tour'
               label='Adrenaline'
               path='/signUp'
             />

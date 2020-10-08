@@ -6,9 +6,9 @@ const api = axios.create({
 });
 export const getAllGuides = () => api.get("/guides");
 
-export const searchGuides = (country, lang, city, cost) =>
+export const searchGuides = (country, lang, city, cost,comments) =>
   api.get(
-    `search?${new URLSearchParams({ country, lang, city, cost }).toString()}`
+    `search?${new URLSearchParams({ country, lang, city, cost,comments }).toString()}`
   );
 
 const apis = { getAllGuides, searchGuides };

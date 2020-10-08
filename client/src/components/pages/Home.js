@@ -2,14 +2,18 @@ import React from 'react';
 import '../../App.css';
 import Cards from '../Card'
 import HeroSection from '../heroSection';
-// import Footer from '../Footer';
+import Footer from '../Footer';
+import Model from '../picUp'
 
 function Home() {
   return (
     <>
-      <HeroSection />
-      <Cards />
-      {/* <Footer /> */} */
+      {/* <Model/>  */}
+      <div>
+        <HeroSection />
+        <Cards />
+        <Footer/>
+      </div>
     </>
   );
 }

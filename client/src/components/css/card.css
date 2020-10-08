@@ -32,7 +32,7 @@
     border-radius: 10px;
   }
   
-  .cards__item__link {
+  /* .cards__item__link {
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -43,7 +43,7 @@
     overflow: hidden;
     text-decoration: none;
   }
-  
+   */
   .cards__item__pic-wrap {
     position: relative;
     width: 100%;

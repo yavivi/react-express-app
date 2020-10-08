@@ -1,45 +1,59 @@
 import React from 'react';
 import api from '../../api'
-import ListItem from '../ListDisplay';
+import ListItem from '../ListDisplay'
+import Modal from '../profileGaide'
 
 
-const TableRow= ({rows})=>{
-    return(
-        rows.map(cell =>
-            <ListItem  src='../pictures/eliran.jpeg'
-            text={cell.first_name+' '+cell.last_name}
-            // text2={cell.last_name}
-        
-            label={cell.country+' '+' only in '+cell.cost+'$ for a tour' }
-            path='/services'/>
-          
+const TableRow = ({ guides }) => {
+    return (
+        guides.map(guide =>
+                <ListItem src={guide.pic}
+                    name={guide.first_name+ ' ' + guide.last_name}
+                    country={guide.country}
+                    lang={ guide.Language}
+                    cost={guide.cost}
+                    summary={guide.summary}
+                    email={guide.Email}
+                    // com  = {guide.comments.map((com)=>(
+                    //     com.comments                 
+                    // ))}
+                    // date  = {guide.comments.map((date)=>(
+                    //     date.comments                 
+                    // ))}
+
+                     path='/services'
+                     />
+
+        )
     )
-)
-        }
+}
 class List extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            guides:[]
+            guides: []
         }
     }
     componentDidMount = async () => {
-        await api.getAllGuides().then(res=>{
+        await api.getAllGuides().then(res => {
             this.setState({
                 guides: res.data.data
             })
         })
     }
     render() {
-        const{guides:guides}=this.state
+        const { guides: guides } = this.state
         return (
-           <table>
-               <h2 >
-                The best tour guides !
-               </h2>
-               {guides ? <TableRow rows={guides}/>:' '}
-           </table>
-            
+            <div>
+                <h2 >
+                    The best tour guides !
+                </h2>
+                <ul>
+                    {guides ? <TableRow guides={guides} /> : ' '}
+                </ul>
+            </div>
+
+
         )
     }
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Modal from './profileGaide'
 
 function ListDisplay(props) {
   return (
     <>
       <li className='cards__item'>
-        <Link className='cards__item__link' to={props.path}>
-          <figure className='cards__item__pic-wrap' data-category={props.label} >
+        <div className='cards__item__div'>
+          <figure className='cards__item__pic-wrap' data-category={props.country} >
             <img
               className='cards__item__img'
               alt='Travel Image'
@@ -14,9 +14,12 @@ function ListDisplay(props) {
             />
           </figure>
           <div className='cards__item__info'>
-            <h5 className='cards__item__text'>{props.text}</h5>
+            {/* <h5 className='cards__item__text'>{props.text}</h5> */}
+            { <Modal name={props.name} src={props.src} country={props.country} 
+            cost={props.cost} lang={props.lang} summary={props.summary} com={props.com} email={props.email}/> }
+            
           </div>
-        </Link>
+        </div>
       </li>
     </>
   );
