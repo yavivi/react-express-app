@@ -1,34 +1,4 @@
 .navbar {
-<<<<<<< HEAD
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 999;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%
-  }
-  
-  .navbar-logo {
-    color: #fff;
-    justify-self: start;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-=======
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   height: 80px;
   display: flex;
@@ -115,26 +85,10 @@
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
->>>>>>> master
   }
 
   .nav-menu {
     display: flex;
-<<<<<<< HEAD
-    /* grid-template-columns: repeat(5, auto); */
-    /* grid-gap: 10px; */
-    list-style: none;
-    text-align: center;
-    /* width: 60vw; */
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    /* margin-right: 2rem; */
-  }
-  
-  .nav-item {
-    /* height: 80px; */
-=======
     flex-direction: column;
     width: 100%;
     height: 90vh;
@@ -151,7 +105,6 @@
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
->>>>>>> master
   }
 
   .nav-links {

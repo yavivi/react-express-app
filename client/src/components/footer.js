@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from './Button';
 import { Link } from 'react-router-dom'
 // import { Facebook } from 'react-social-icons';
-import { FiYoutube,FiTwitter,FiInstagram } from "react-icons/fi";
+import { FiYoutube,FiTwitter,FiInstagram, } from "react-icons/fi";
 import {FaFacebook} from 'react-icons/fa'
 
 
@@ -15,7 +15,7 @@ function Footer() {
     return (
         <div className="footer-container">
             <section className="footer-subscription">
-                <p>BLACK LIVES MATTET</p>
+                <p>BLACK LIVES MATTER</p>
                 <p className="footer-subscription-heading">
                 Join the Adventure newsletter to receive our best places and the our guides               </p>
                 <p className="footer-subscription-text">

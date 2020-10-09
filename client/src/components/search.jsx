@@ -40,68 +40,6 @@ const Search = (props) => {
     }
   };
 
-<<<<<<< HEAD
-  render() {
-    const { filterItems } = this.state;
-    return (
-      <div>
-        <section className="search-sec">
-          <div className="container">
-            <form action="#" method="post" noValidate="novalidate">
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="row">
-                    <div className="col-lg-3 col-md-3 col-sm-12 p-0">
-                      <input
-                        type="text"
-                        name="country"
-                        onChange={this.changeHandler}
-                        className="form-control search-slt"
-                        placeholder="country"
-                      />
-                    </div>
-                    <div className="col-lg-3 col-md-3 col-sm-12 p-0">
-                      <input
-                        type="text"
-                        name="city"
-                        onChange={this.changeHandler}
-                        className="form-control search-slt"
-                        placeholder="City"
-                      />
-                    </div>
-                    <div className="col-lg-3 col-md-3 col-sm-12 p-0">
-                      <input
-                        type="text"
-                        name="cost"
-                        onChange={this.changeHandler}
-                        className="form-control search-slt"
-                        placeholder="cost"
-                      />
-                    </div>
-                    <div className="col-lg-3 col-md-3 col-sm-12 p-0">
-                      <select
-                        name="language"
-                        onChange={this.changeHandler}
-                        className="form-control search-slt"
-                        id="exampleFormControlSelect1"
-                      >
-                        <option>Select Language</option>
-                        <option>spanish</option>
-                        <option>hebrew</option>
-                        <option>english</option>
-                        <option>french</option>
-                      </select>
-                    </div>
-                    <div className="col-lg-3 col-md-3 col-sm-12 p-0">
-                      <button
-                        type="button"
-                        onClick={this.getSearchResult}
-                        className="btn btn-danger wrn-btn"
-                      >
-                        Search
-                      </button>
-                    </div>
-=======
 
 
   const { filterItems } = state;
@@ -163,7 +101,6 @@ const Search = (props) => {
                     >
                       Search
                     </button>
->>>>>>> master
                   </div>
                 </div>
               </div>

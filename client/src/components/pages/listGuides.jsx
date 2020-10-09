@@ -4,26 +4,23 @@ import ListItem from '../ListDisplay'
 import Modal from '../profileGaide'
 
 
-const TableRow = ({ guides }) => {
+const TableRow = ({ rows }) => {
     return (
-        guides.map(guide =>
-                <ListItem src={guide.pic}
-                    name={guide.first_name+ ' ' + guide.last_name}
-                    country={guide.country}
-                    lang={ guide.Language}
-                    cost={guide.cost}
-                    summary={guide.summary}
-                    email={guide.Email}
-                    // com  = {guide.comments.map((com)=>(
-                    //     com.comments                 
-                    // ))}
-                    // date  = {guide.comments.map((date)=>(
-                    //     date.comments                 
-                    // ))}
-
-                     path='/services'
-                     />
-
+        rows.map(cell =>
+            <div>
+                <ListItem src={cell.pic}
+                    text={cell.first_name + ' ' + cell.last_name}
+                    country={' '+cell.country}
+                    cost={' '+cell.cost+'$'}   
+                    summery={cell.summery}
+                    com  = {cell.comments.map((com)=>(
+                        com.text
+                    ))}
+                    date  = {cell.comments.map((date)=>(
+                        date.date
+                    ))}
+       />
+            </div>
         )
     )
 }

@@ -3,6 +3,7 @@ import { AppContext } from "../context/appContext";
 import SearchResults from "./newSearchResult";
 
 
+
 const ListGuides = () => {
     const appContext = useContext(AppContext);
 
@@ -42,19 +43,28 @@ const ListGuides = () => {
 
             {
                 appContext.state.filterItems &&
-                appContext.state.filterItems.map((item, index) => (
+                appContext.state.filterItems.map((props, index) => (
                     <div className="results" key={index}>
                         <SearchResults
-                            pic={item.pic}
-                            first_name={item.first_name}
-                            last_name={item.last_name}
-                            summery={item.summery}
-                            Experience={item.trips.map((item)=>{
-                                return(<span>{item.name+" | "}</span>)
+                            pic={props.pic}
+                            first_name={props.first_name}
+                            last_name={props.last_name}
+                            country={props.country}
+                            cost={props.cost + '$'}
+                            summary={props.summary}
+                            city={props.city}
+                            com={props.comments.map((com) => (
+                                com.text
+                            ))}
+                            date={props.comments.map((date) => (
+                                date.date
+                            ))}
+                            Experience={props.trips.map((props) => {
+                                return (<span>{props.name + " | "}</span>)
                             })}
-                       
-                            Language={item.Language.map((item)=>{
-                                return(<span>{item+" | "}</span>)
+
+                            Language={props.Language.map((props) => {
+                                return (<span>{props + " | "}</span>)
                             })}
 
                         // to="/"

@@ -3,7 +3,7 @@ import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./css/navBar.css";
 import { FcGlobe } from "react-icons/fc";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { BsList} from "react-icons/bs";
 
 import logo from './Tilok-logo-white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -40,7 +40,8 @@ function Navbar() {
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             {/* <i className={click ? "fas fa-times" : "fas fa-bars"} /> */}
-            <FontAwesomeIcon icon="play" size="1x" color="#6AA84F"/>
+            {/* <FontAwesomeIcon icon="play" size="1x" color="#6AA84F"/> */}
+            <BsList color="white"/>
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
