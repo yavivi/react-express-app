@@ -19,7 +19,8 @@ const ListGuides = () => {
             <div className="result-sort">
                 {appContext.state.filterItems.length != 0 ? (
                     <hgroup class="mb20">
-                        <h1>Search Results</h1>
+                        {/* <h1>Search Results</h1> */}
+                        <br></br>
                         <h2 class="lead">
                             <strong class="text-danger">
                                 {appContext.state.filterItems.length}

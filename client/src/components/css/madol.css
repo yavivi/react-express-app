@@ -6,15 +6,20 @@
     margin-right: 20px; */
     /* opacity: 0.4; */
 }
-h5:hover {
+/* h5:hover {
     color: rgb(232, 70, 253);
+} */
+.clickOpen{
+    margin-top: 10px;
 }
 
 .rating {
     unicode-bidi: bidi-override;
-    margin-top: 0%;
-    width: 150px;
-    margin-left: 590px;
+    /* margin-top: 0%; */
+    /* width: 150px; */
+    /* margin-left: 600px; */
+    /* margin-left: 250px; */
+
 
 }
 .rating>span {
@@ -22,16 +27,24 @@ h5:hover {
     display: inline-block;
     position: relative;
     width: 1em;
-    color: #febb01;
+    /* color: #febb01; */
+    color: orangered;
 }
 
 .rating>.full:before {
     content: "\2605";
     position: absolute;
 } 
+
+
+
 .allExperience{
-    font-size: 25px;
-    margin-left: 10px;
+    font-size: 20px;
+    /* margin-left: 10px; */
+    color: black;
+    margin-top: 200px;
+    /* float: left; */
+    text-align: left;
 
 }
 .Experience{
@@ -44,6 +57,7 @@ h5:hover {
     font-size: x-large;
     font-family: 'Fira Sans', sans-serif;
     display: inline;
+    color: black;
 
 }
 .CityCounStar{
@@ -57,16 +71,17 @@ h5:hover {
 
 
 }
-.right {
-    margin-top: opx;
-    margin-right: 100px;
-    margin-left: 40px;
+.right{
+    margin-top: 10px;
+    margin-left: 70px;
     float: left;
+    font-size: 17px;
     /* border-style: solid; */
     /* border-color: #f5f5f5;
     background-color: gainsboro;
     width: 400px;
     height: 300px; */
+
 }
 .left {
     float: left;
@@ -88,6 +103,7 @@ h5:hover {
     height: 300px;
     margin-left: 10px;
     margin-top: -16px;
+    text-align: center;
 
 }
 
@@ -114,46 +130,55 @@ h5:hover {
 
 
 .dateLangBook {
-    border-style: solid; 
+    color: black;
     display: inline;
-    border-color:grey;
     float: right;
-    width: 330px;
-    height: 325px;
-    margin-right: -340px;
+    width: 300px;
+    height:470px;
+    margin-right: -420px;
     margin-top: -280px;
-    /* background-color: rgba(255, 255, 255, 1); */
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     border-width: 1px;
     border-style: solid;
     border-color: rgba(188, 188, 188, 1);
-    border-radius: 4px;
-    box-shadow: none;
+    /* border-radius: 4px; */
+    margin-left: 10px;
 }
+
 .date{
-    border-radius: 0px;
+    /* border-radius: 0px; */
+    color: black;
     width: 200px;
-    height: 16px;
-    font-family: 'ArialMT', 'Arial';
+    height: 66px;
+    font-family: "Fira Sans", sans-serif;
     font-weight: 400;
-    font-style: normal;
+    /* font-style: normal; */
     font-size: 14px; 
-        /* /* border-width: 0px; */
-  
-  
+    margin-left: 10px;
+    margin-top: 16px;
+}
+.date,input[type=text],[type=date],[type=number],[type=tel],[type=submit]{
+     width: 80%;
+    border-radius: 15px;
+}
+.form-control search-slt1,button,input[type=submit]{
+   padding: .375rem .75rem;
+   background-color:orangered;
+   color: black;
+   border-radius: 15px;
 }
 
 
-.dateLang {
+/* .dateLang {
     border-style: solid;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    width: 360px;
+    width: 400px;
     height: 150px;
     border-color: white; 
 
-}
+} */
 
 .book {
     /* position: absolute;
@@ -208,9 +233,9 @@ h5:hover {
     height: 291px;  */
 }
 
-.checked {
+/* .checked {
     color: yellow;
-}
+} */
 
 .clickOpen {
     text-decoration: underline;
@@ -229,5 +254,20 @@ h5:hover {
 
 .summaryGuide {
     display: inline;
+
+}
+.CityCoun{
+    margin-left: 10px;
+}
+
+.title{
+    color: black;
+}
+.putRating{
+    /* margin-top: 200px; */
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+    
 
 }

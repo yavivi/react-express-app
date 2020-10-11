@@ -15,7 +15,7 @@ function ListDisplay(props) {
           </figure>
           <div className='cards__item__info'>
             {/* <h5 className='cards__item__text'>{props.text}</h5> */}
-            <Modal text={props.text}  src={props.src} country={props.country} cost={props.cost} com={props.com}
+            <Modal  src={props.src} country={props.country} cost={props.cost} com={props.com}
             date={props.date} summery={props.summery}/>
           </div>
         </div>

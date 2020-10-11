@@ -6,12 +6,14 @@ class SignUp extends Component {
         return (
             <form className="SignUp">
                 <div className="title2">
+              
+
                     <h1>Sing Up</h1>
                 </div>
 
                 <div className="form-group">
                     <label >First name</label>
-                    <input type="text" className="form-control" placeholder="First name"/>
+                    <input type="text" className="form-control" placeholder="First name" />
                 </div>
 
                 <div className="form-group">

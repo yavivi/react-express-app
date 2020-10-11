@@ -14,24 +14,26 @@ export default function SearchResults(props) {
         <div class="singleResult">
           <article class="search-result row">
             <div class="col-xs-12 col-sm-12 col-md-3">
-            <Modal text={props.first_name+' '+props.last_name} src={props.pic} country={props.country} cost={props.cost} com={props.com}
-                            date={props.date} summary={props.summary} city={props.city} Experience={props.Experience}/>
-                
+              <Modal text={props.first_name + ' ' + props.last_name} src={props.pic} country={props.country} cost={props.cost} com={props.com}
+                date={props.date} summary={props.summary} city={props.city} Experience={props.Experience} Language={props.Language} />
+
               {/* </a> */}
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-9 excerpet">
               <div className="info">
-                <h3>
-                {props.first_name + " " + props.last_name} 
-                  {/* <a href="Modal" title="">
+                {/* <h4>
+                {/* {props.first_name + " " + props.last_name}  */}
+                {/* <a href="Modal" title="">
                   </a> */}
-                </h3>
+                {/* </h4> */}
                 <div >
                   <ul >
                     <li>
+                    
                       <div class="rating">
-                        <span>☆</span>
+                      <h3>:Rating</h3>
+                      <span>☆</span>
                         <span>☆</span>
                         <span>☆</span>
                         <span>☆</span>
@@ -42,7 +44,7 @@ export default function SearchResults(props) {
                 </div>
                 <span>
 
-                summary:
+                  Summary:
 
               </span>
                 <div>{props.summary}</div>

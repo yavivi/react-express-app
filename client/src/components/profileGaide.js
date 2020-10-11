@@ -53,7 +53,7 @@ export default class Examples extends Component {
                 {/* <input type="button" value="Open" onClick={() => this.openModal()} /> */}
                 <img className='cards_item_img' alt='Click' src={this.props.src} onClick={() => this.openModal()} width="180px"
                     height="160px" />
-                <h5 className='clickOpen' onClick={() => this.openModal()}>{this.props.text} </h5>
+                <h4 className='clickOpen' onClick={() => this.openModal()}>{this.props.text} </h4>
                 {/* <img src={this.props.src} height="300px" width="300px" /> */}
 
                 <h2>
@@ -64,27 +64,16 @@ export default class Examples extends Component {
                 <Modal className="modal" visible={this.state.visible} width="95%" height="100%" effect="fadeInUp" onClickAway={() => this.closeModal()}>
 
 
-                    <div className="guideModal">
-                        <div className="title">
+                    <div className="guideModal" >
+                        <div className="title" >
                             <h1>{this.props.text}</h1>
                         </div>
+                        
                         <div className="CityCounStar">
                             <div className="CityCoun">
-                                <h4>{this.props.city + ',' + ' ' + this.props.country}</h4>
+                                <h6>{this.props.city + ',' + ' ' + this.props.country}</h6>
                             </div>
-                            <ul >
-                                <li>
-                                    <div className="rating">
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                        <span>☆</span>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
-
 
                         <div className="userInformation">
                             <div className="left">
@@ -145,7 +134,42 @@ export default class Examples extends Component {
                                 </Carousel>
 
                                 <br></br>
-                                <div className="allExperience">
+                                <div className="putRating">
+                                    <ul >
+                                        Click to rate:
+                                            <li>
+                                            <div className="rating">
+                                                <span>☆</span>
+                                                <span>☆</span>
+                                                <span>☆</span>
+                                                <span>☆</span>
+                                                <span>☆</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <div className="comment">
+                                        <table >
+                                            Comments:{' ' + this.props.com + ' '}
+                                            {/* {this.props.date} */}
+                                            <CommentGroup />
+                                        </table>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className="right">
+                                <div className="summary">
+                                    <h3> About Me</h3>
+                                    <br></br>
+                                    {this.props.summary}
+                                    <br></br>
+                                    <br></br>
+                                    I speak the languages: {this.props.Language}
+
+                                    <div className="allExperience">
                                     <div className="Experience">
 
                                         <FaChevronCircleRight /> Experience: {this.props.Experience}
@@ -158,19 +182,12 @@ export default class Examples extends Component {
                                     </div>
                                 </div>
 
-                            </div>
 
-                            <div className="right">
-                                <div className="summary">
-                                    <h4> About Me</h4>
-                                    {this.props.summary}
-
-                                    {/* <h3>{this.props.cost + '.00' + '$'} </h3> */}
                                 </div>
 
 
-                                <div className="dateLangBook">
-                                    <div className="date">
+                                <div className="dateLangBook" >
+                                    <div className="date" >
                                         <div>
                                             StartDate
                                            <input
@@ -187,6 +204,7 @@ export default class Examples extends Component {
                                                 name="date"
                                                 className="form-control search-slt"
                                                 placeholder=""
+
                                             />
                                         </div>
                                         <div className="Tourists">
@@ -196,11 +214,54 @@ export default class Examples extends Component {
                                                 name="sum"
                                                 className="form-control search-slt"
                                                 placeholder=""
+                                                min="0"
                                             />
 
                                         </div>
+                                        <div >
+                                            Phone:
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                className="form-control search-slt"
+                                            />
+                                        </div>
+                                        <br></br>
                                         <div className="price">
-                                          Total Amount {this.props.cost}
+                                            <h5>Total Amount {this.props.cost}</h5>
+                                        </div>
+                                        <br></br>
+                                        <input
+                                            type="submit"
+                                            name="submit"
+                                            className="form-control search-slt1"
+                                            value="Book Now"
+                                            color="blue"
+                                        />
+                                        <br></br>
+                                        <p >
+                                            <form className="contact-form" onSubmit={this.sendEmail}>
+                                                <input type="hidden" name="contact_number" />
+                                                <input type="hidden" name="user_name" value={this.props.name} />
+                                                <input type="hidden" name="Country" value={this.props.Country} />
+                                                <input type="hidden" name="cost" value={this.props.cost} />
+                                                <input type="hidden" name="phone" value={this.props.phone} />
+                                                <input type="hidden" name="user_email" value={this.props.email} />
+                                                <input type="hidden" name="message" value={this.props.summary} />
+
+                                                <button className="button" type="submit" value="I Want Him">I Want Him</button>
+
+                                            </form>
+
+                                        </p>
+                                        <div className="borderBook">
+                                        </div>
+                                        <br></br>
+                                        <div className="media">
+                                            <h4>share:</h4>
+                                            <Link to='#'><FiInstagram /></Link>
+                                            <Link to='#'> <FaFacebook /></Link>
+
                                         </div>
 
                                     </div>
@@ -210,19 +271,9 @@ export default class Examples extends Component {
                                         <br></br>
                                         <h4>Cost:{this.props.cost}</h4> */}
                                 </div>
-                                <div className="dateLang" >
-                                    {this.props.lang}
-                                </div>
+
                             </div>
-                            {/* <div className="borderBook">
 
-                            </div> */}
-                            {/* <div className="media">
-                                <h2>share:</h2>
-                                <Link to='#'><FiInstagram /></Link>
-                                <Link to='#'> <FaFacebook /></Link>
-
-                            </div> */}
 
                             {/* <div className="comment">
                                 <table >
@@ -232,21 +283,7 @@ export default class Examples extends Component {
                                 </table>
                             </div> */}
                             <br></br>
-                            <p >
-                                {/* <form className="contact-form" onSubmit={this.sendEmail}>
-                                    <input type="hidden" name="contact_number" />
-                                    <input type="hidden" name="user_name" value={this.props.name} />
-                                    <input type="hidden" name="Country" value={this.props.Country} />
-                                    <input type="hidden" name="cost" value={this.props.cost} />
-                                    <input type="hidden" name="phone" value={this.props.phone} />
-                                    <input type="hidden" name="user_email" value={this.props.email} />
-                                    <input type="hidden" name="message" value={this.props.summary} />
 
-                                    <button className="button" type="submit" value="I Want Him">I Want Him</button>
-
-                                </form> */}
-
-                            </p>
 
                         </div>
                         {/* <div className="book">
