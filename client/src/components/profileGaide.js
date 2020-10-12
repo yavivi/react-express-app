@@ -68,7 +68,7 @@ export default class Examples extends Component {
                         <div className="title" >
                             <h1>{this.props.text}</h1>
                         </div>
-                        
+
                         <div className="CityCounStar">
                             <div className="CityCoun">
                                 <h6>{this.props.city + ',' + ' ' + this.props.country}</h6>
@@ -162,6 +162,7 @@ export default class Examples extends Component {
 
                             <div className="right">
                                 <div className="summary">
+                                    <div>
                                     <h3> About Me</h3>
                                     <br></br>
                                     {this.props.summary}
@@ -169,24 +170,33 @@ export default class Examples extends Component {
                                     <br></br>
                                     I speak the languages: {this.props.Language}
 
+
+                                    </div>
+                                   
+
                                     <div className="allExperience">
-                                    <div className="Experience">
+                                        <div className="Experience">
 
-                                        <FaChevronCircleRight /> Experience: {this.props.Experience}
-                                    </div>
-                                    <div className="Experience">
-                                        <FaChevronCircleRight />  7:00AM- 18:00PM
+                                            <FaChevronCircleRight /> Experience: {this.props.Experience}
+                                        </div>
+                                        <div className="Experience">
+                                            <FaChevronCircleRight />  7:00AM- 18:00PM
                                    </div>
-                                    <div className="policy">
-                                        <FaChevronCircleRight />  <Link to='/country'>Cancellation policy</Link>
+                                        <div className="policy">
+                                            <FaChevronCircleRight />  <Link to='/country'>Cancellation policy</Link>
+                                        </div>
+
                                     </div>
-                                </div>
 
 
                                 </div>
 
 
-                                <div className="dateLangBook" >
+
+
+                            </div>
+
+                            <div className="dateLangBook" >
                                     <div className="date" >
                                         <div>
                                             StartDate
@@ -229,15 +239,10 @@ export default class Examples extends Component {
                                         <br></br>
                                         <div className="price">
                                             <h5>Total Amount {this.props.cost}</h5>
-                                        </div>
+                                        </div>                                
                                         <br></br>
-                                        <input
-                                            type="submit"
-                                            name="submit"
-                                            className="form-control search-slt1"
-                                            value="Book Now"
-                                            color="blue"
-                                        />
+                                        <button className="button" type="submit" value="Book Now">Book Now</button>
+                                        <br></br>
                                         <br></br>
                                         <p >
                                             <form className="contact-form" onSubmit={this.sendEmail}>
@@ -254,27 +259,23 @@ export default class Examples extends Component {
                                             </form>
 
                                         </p>
-                                        <div className="borderBook">
                                         </div>
                                         <br></br>
-                                        <div className="media">
-                                            <h4>share:</h4>
+                                        <br></br>
+                                        <br></br>
+
+                                        <div className = 'connect' >
+                                            <h3>Connect Us:</h3>
+                                            <div className="media" height='20px'>                                          
                                             <Link to='#'><FiInstagram /></Link>
                                             <Link to='#'> <FaFacebook /></Link>
-
-                                        </div>
-
+                                            </div>
                                     </div>
 
 
-                                    {/* <h4>From:{this.props.country}</h4>
-                                        <br></br>
-                                        <h4>Cost:{this.props.cost}</h4> */}
+                        
                                 </div>
-
-                            </div>
-
-
+                                
                             {/* <div className="comment">
                                 <table >
                                     Comments:{' ' + this.props.com + ' '}
@@ -282,7 +283,7 @@ export default class Examples extends Component {
                                     <CommentGroup />
                                 </table>
                             </div> */}
-                            <br></br>
+                            
 
 
                         </div>
@@ -290,7 +291,7 @@ export default class Examples extends Component {
                             <Link to='#' className="text">Book Now</Link>
                         </div> */}
 
-                    </div>*/
+                    </div>
 
                 </Modal>
             </section>
